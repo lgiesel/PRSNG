@@ -1,0 +1,8 @@
+<!-- Can drop this menu component anywhere -->
+<nav> 
+	<ul>
+		<li *ngFor='let menu of menuitems' title='{{menu.tooltip}}'>  
+			<a routerLink='{{menu.href}}'>{{menu.display}}</a>  
+		</li>
+	</ul>
+</nav>

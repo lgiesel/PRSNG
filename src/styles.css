@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+.component-title {
+	font-size: 1.5em;
+	font-weight: bold;
+}
+
+#createnew {
+	vertical-align: text-top;
+}
+.lefthalf {
+	display: inline-block;
+	width: 49%;
+}
+
+.righthalf {
+	display: inline-block;
+	width: 49%;
+	text-align: right;
+}
