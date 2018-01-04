@@ -25,7 +25,7 @@ export class UserCreateComponent implements OnInit {
   }
 
 constructor(private UserSvc: UserService,
-	        private router: Router) { }
+	          private router: Router) { }
 
   ngOnInit() {
   }
