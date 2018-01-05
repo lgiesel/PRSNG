@@ -10,6 +10,7 @@ import { UserListComponent } from './feature/user/user-list/user-list.component'
 import { UserService } from './service/user.service';
 import { VendorService } from './service/vendor.service';
 import { ProductService } from './service/product.service';
+import { SystemService } from './service/system.service';
 import { MenuComponent } from './core/menu/menu.component';
 import { SortPipe } from './util/sort-pipe';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
@@ -23,6 +24,8 @@ import { ProductListComponent } from './feature/product/product-list/product-lis
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { PurchaserequestComponent } from './feature/purchaserequest/purchaserequest.component';
    
 @NgModule({
   declarations: [
@@ -40,7 +43,9 @@ import { ProductEditComponent } from './feature/product/product-edit/product-edi
     ProductListComponent,
     ProductDetailComponent,
     ProductCreateComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    UserLoginComponent,
+    PurchaserequestComponent
   ],
   imports: [
     BrowserModule,
@@ -48,7 +53,7 @@ import { ProductEditComponent } from './feature/product/product-edit/product-edi
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [UserService, VendorService, ProductService],
+  providers: [UserService, VendorService, ProductService, SystemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

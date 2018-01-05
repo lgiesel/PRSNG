@@ -12,22 +12,31 @@ import { ProductListComponent } from './feature/product/product-list/product-lis
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
+import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 
-const routes: Routes = [//Order matters: most specific 1st, then general
-	{ path: 'user/detail/:id', component: UserDetailComponent }, //id matches url id
+//Order matters: most specific 1st, then general
+const routes: Routes = [
+	// { path: '', redirectTo: '/home', pathMatch: 'full;' }, 
+	{ path: 'user/detail/:id', component: UserDetailComponent }, 
 	{ path: 'user/edit/:id', component: UserEditComponent },
 	{ path: 'user/create', component: UserCreateComponent },
 	{ path: 'user/list', component: UserListComponent },
-	{ path: 'vendor/detail/:id', component: VendorDetailComponent }, //id matches url id
+	{ path: 'vendor/detail/:id', component: VendorDetailComponent }, 
 	{ path: 'vendor/edit/:id', component: VendorEditComponent },
 	{ path: 'vendor/create', component: VendorCreateComponent },
 	{ path: 'vendor/list', component: VendorListComponent },
-	{ path: 'product/detail/:id', component: ProductDetailComponent }, //id matches url id
+	{ path: 'product/detail/:id', component: ProductDetailComponent }, 
 	{ path: 'product/edit/:id', component: ProductEditComponent },
 	{ path: 'product/create', component: ProductCreateComponent },
-	{ path: 'product/list', component: ProductListComponent }
+	{ path: 'product/list', component: ProductListComponent },
+	{ path: 'user/login', component: UserLoginComponent }
+	// ,
+	// { path: 'home', component: HomeComponent },
+	// { path: 'about', component: AboutComponent },
+	// { path: '**', component: HomeComponent },
 ];
-	
+//Point not looged in user to userlist rather than home
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

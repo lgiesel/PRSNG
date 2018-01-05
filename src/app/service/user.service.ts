@@ -28,9 +28,9 @@ export class UserService {
   	return this.http.post(url+"Update", user) as Observable<any>;
   } 
 
-  // authenticate(user: User): Observable<User[]> {
-  // 	return this.http.post(url+"Add", user, { headers: headers }) as Observable<any>;
-  // } 
+  authenticate(username: string, password: string): Observable<User[]> {
+    return this.http.get(url+"Authenticate?uname="+username+"&pwd="+password) as Observable<User[]>;
+  }
 
   remove(id): Observable<any> {
   	return this.http.get(url+"Remove?id="+id) as Observable<any>;
