@@ -26,7 +26,7 @@ list(): Observable<Product[]> {
   } 
 
   remove(id): Observable<any> {
-  	return this.http.get(url+"Remove?id="+id) as Observable<any>;
+  	return this.http.get(url+"Delete?id="+id) as Observable<any>;
   } 
 
   constructor(private http: HttpClient) { } 
