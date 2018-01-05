@@ -23,4 +23,4 @@ export class ProductListComponent implements OnInit {
   			this.products = products;
   	console.log(products);
   });
-} 
+}
