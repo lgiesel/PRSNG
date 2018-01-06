@@ -11,7 +11,7 @@ import { SystemService } from '@svc/system.service';
 export class UserListComponent implements OnInit {
 
   title: string = 'User List';
-  selectedSortKey: string = 'Id'; //default sort - can chg to another value
+  selectedSortKey: string = 'Id'; 
   sortDesc: string = 'asc';
   sortKeys: string[] = User.sortableKeys;
   users: User[];
@@ -23,7 +23,7 @@ export class UserListComponent implements OnInit {
   	this.UserSvc.list()
   		.subscribe(users => {
   			this.users = users;
-  	console.log(users);
-  });
-
- }    
+  	    console.log(users);
+    });
+  }
+}  

@@ -34,6 +34,6 @@ export class VendorEditComponent implements OnInit {
       .subscribe(vendors => {
         this.vendor = vendors.length > 0 ? vendors[0] : null;
         console.log(this.vendor);
-      });
+     });
   }
 }

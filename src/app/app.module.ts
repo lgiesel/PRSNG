@@ -10,6 +10,7 @@ import { UserListComponent } from './feature/user/user-list/user-list.component'
 import { UserService } from './service/user.service';
 import { VendorService } from './service/vendor.service';
 import { ProductService } from './service/product.service';
+import { PrService } from './service/pr.service';
 import { SystemService } from './service/system.service';
 import { MenuComponent } from './core/menu/menu.component';
 import { SortPipe } from './util/sort-pipe';
@@ -25,7 +26,10 @@ import { ProductDetailComponent } from './feature/product/product-detail/product
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
-import { PurchaserequestComponent } from './feature/purchaserequest/purchaserequest.component';
+import { PrListComponent } from './feature/pr/pr-list/pr-list.component';
+import { PrDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
+import { PrEditComponent } from './feature/pr/pr-edit/pr-edit.component';
+import { PrCreateComponent } from './feature/pr/pr-create/pr-create.component';
    
 @NgModule({
   declarations: [
@@ -45,7 +49,10 @@ import { PurchaserequestComponent } from './feature/purchaserequest/purchaserequ
     ProductCreateComponent,
     ProductEditComponent,
     UserLoginComponent,
-    PurchaserequestComponent
+    PrListComponent,
+    PrDetailComponent,
+    PrEditComponent,
+    PrCreateComponent,
   ],
   imports: [
     BrowserModule,
@@ -53,7 +60,8 @@ import { PurchaserequestComponent } from './feature/purchaserequest/purchaserequ
     HttpClientModule,
     AppRoutingModule,
   ],
-  providers: [UserService, VendorService, ProductService, SystemService],
+  providers: [UserService, VendorService, ProductService, 
+              PrService, SystemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

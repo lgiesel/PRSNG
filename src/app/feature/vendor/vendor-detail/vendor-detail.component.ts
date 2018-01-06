@@ -37,7 +37,7 @@ export class VendorDetailComponent implements OnInit {
       .subscribe(usrs => {
         this.vendor = usrs.length > 0 ? usrs[0] : null;
         console.log(this.vendor);
-      });
+     });
   }
 
 }

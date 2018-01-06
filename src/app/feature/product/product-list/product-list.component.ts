@@ -29,15 +29,16 @@ export class ProductListComponent implements OnInit {
              prod.Name = vendor[0].Name;
              console.log(prod);
            });
-        //console.log("VendorName Retreived is " + prod.VendorName);
      }
   }
+        //console.log("VendorName Retreived is " + prod.VendorName);
 
   ngOnInit() {
   	this.ProductSvc.list()
   		.subscribe(products => {
   			this.products = products;
         this.addVendorName(this.products);        
-  	console.log(products);
-  });
+  	    console.log(products);
+    });
+  }
 }

@@ -12,6 +12,7 @@ import { ProductListComponent } from './feature/product/product-list/product-lis
 import { ProductDetailComponent } from './feature/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
+import { PrListComponent } from './feature/pr/pr-list/pr-list.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 
 //Order matters: most specific 1st, then general
@@ -29,6 +30,7 @@ const routes: Routes = [
 	{ path: 'product/edit/:id', component: ProductEditComponent },
 	{ path: 'product/create', component: ProductCreateComponent },
 	{ path: 'product/list', component: ProductListComponent },
+	{ path: 'pr/list', component: PrListComponent },
 	{ path: 'user/login', component: UserLoginComponent }
 	// ,
 	// { path: 'home', component: HomeComponent },

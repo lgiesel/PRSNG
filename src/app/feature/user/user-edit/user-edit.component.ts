@@ -34,6 +34,6 @@ export class UserEditComponent implements OnInit {
       .subscribe(usrs => {
         this.user = usrs.length > 0 ? usrs[0] : null;
         console.log(this.user);
-      });
+    });
   }
 }
