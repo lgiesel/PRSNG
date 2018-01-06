@@ -1,3 +1,34 @@
-<p>
-  pr-detail works!
-</p>
+<app-menu></app-menu>
+
+<div class='component-content' *ngIf='pr'> 
+
+	<div>
+		<span class='component-title'>[{{title}}]</span> 
+		 <span><a routerLink='/pr/create'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'></a></span>
+		| <span><a routerLink='/pr/list'>Back to list</a></span>
+	</div>
+
+	<p *ngIf='undefined'>Loading ...</p>
+
+	<table> 
+		<tr><th>ID:</th><td>{{pr.Id}}</td></tr>
+		<tr><th>UserID:</th><td>{{pr.UserID}}</td></tr>
+		<tr><th>Description:</th><td>{{pr.Description}}</td></tr>
+		<tr><th>Justification:</th><td>{{pr.Justification}}</td></tr>
+		<tr><th>DateNeeded:</th><td>{{pr.DateNeeded}}</td></tr>
+		<tr><th>DeliveryMode:</th><td>{{pr.DeliveryMode}}</td></tr>
+		<tr><th>StatusID:</th><td>{{pr.StatusID}}</td></tr>
+		<tr><th>Total:</th><td>{{pr.Total}}</td></tr>
+		<tr><th>SubmittedDate:</th><td>{{pr.SubmittedDate}}</td></tr>
+		<tr><th>ReasonForRejection:</th><td>{{pr.ReasonForRejection}}</td></tr>
+		<tr><th>UpdatedByUser:</th><td>{{pr.UpdatedByUser}}</td></tr>		
+
+		<tr><td colspan="2">
+			<a routerLink='/pr/edit/{{pr.Id}}' class='btn btn-primary' title='Edit'>Edit</a>
+			<button (click)="remove(pr.Id)" class='btn btn-danger' title='Delete'>Remove</button>
+		</td></tr>
+
+	</table>
+
+</div>
+

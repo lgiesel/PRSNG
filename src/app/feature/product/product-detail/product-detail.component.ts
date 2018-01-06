@@ -33,7 +33,6 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
   	this.route.params.subscribe(parms => this.Id = parms ['id']); //Must match Id in router
     this.ProductSvc.get(this.Id)
-      // .subscribe(products => this.product = products.length > 0 ? products[0] : null);
       .subscribe(product => {
         this.product = product.length > 0 ? product[0] : null;
         console.log(this.product);

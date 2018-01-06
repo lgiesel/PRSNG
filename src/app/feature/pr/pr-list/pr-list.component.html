@@ -24,7 +24,6 @@
 
 	<p *ngIf='!purchreqs'>The data is loading...</p>
 	<table class='table table-sm' *ngIf='purchreqs'>
-	<!-- <table class='table table-sm'>  -->
 
 		<tr>
 			<th>ID</th>
@@ -36,13 +35,12 @@
 			<th>StatusID</th>
 			<th>Total</th>
 			<th>SubmittedDate</th>
-			<th>ReasonForRejection</th>
+			<th>Reject Reason</th>
 			<th>UpdatedByUser</th>			
 			<th>Action</th>					
 		</tr>
 
 		<tr *ngFor='let pr of purchreqs | sort:selectedSortKey:sortDesc'>
-		<!-- <tr> -->
 			<td>{{pr.Id}}</td>		
 			<td>{{pr.UserID}}</td>		
 			<td>{{pr.Description}}</td>	
@@ -56,16 +54,12 @@
 			<td>{{pr.UpdatedByUser}}</td>
 
 			<td class='actions'>
-				<a routerLink=''><img src='assets/detail.png' title='Detail'></a>
-				<a routerLink=''><img src='assets/edit.png' title='Edit'></a>
+				<a routerLink='/pr/detail/{{pr.Id}}'><img src='assets/detail.png' title='Detail'></a>
+				<a routerLink='/pr/edit/{{pr.Id}}'><img src='assets/edit.png' title='Edit'></a>
 			</td>
 		</tr>
 
 	</table>
 </div>
 
-<!-- ADD BACK ONCE DETAILS/EDIT EXIST				
-<a routerLink='/user/detail/{{user.Id}}'><img src='assets/detail.png' title='Detail'></a>
-<a routerLink='/user/edit/{{user.Id}}'><img src='assets/edit.png' title='Edit'></a> -->
 
-<!-- SYNTAX FOR DATE - <td>{{pr.DateNeeded | "YYYY-MM-DD"}}</td> -->

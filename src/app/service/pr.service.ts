@@ -14,6 +14,22 @@ export class PrService {
   	return this.http.get(url+"List") as Observable<PurchaseRequest[]>;
   } 	
 
+  get(id): Observable<PurchaseRequest[]>{
+  	return this.http.get(url+"Get?id="+id) as Observable<PurchaseRequest[]>;
+  }
+
+  create(pr: PurchaseRequest): Observable<any> {
+  	return this.http.post(url+"Add", pr) as Observable<any>;
+  } 
+
+  update(pr: PurchaseRequest): Observable<any> {
+  	return this.http.post(url+"Update", pr) as Observable<any>;
+  } 
+
+  remove(id): Observable<any> {
+  	return this.http.get(url+"Delete?id="+id) as Observable<any>;
+  } 
+
   constructor(private http: HttpClient) { }
 
 }

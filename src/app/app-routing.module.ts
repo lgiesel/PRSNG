@@ -13,6 +13,9 @@ import { ProductDetailComponent } from './feature/product/product-detail/product
 import { ProductEditComponent } from './feature/product/product-edit/product-edit.component';
 import { ProductCreateComponent } from './feature/product/product-create/product-create.component';
 import { PrListComponent } from './feature/pr/pr-list/pr-list.component';
+import { PrDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
+import { PrEditComponent } from './feature/pr/pr-edit/pr-edit.component';
+import { PrCreateComponent } from './feature/pr/pr-create/pr-create.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 
 //Order matters: most specific 1st, then general
@@ -31,6 +34,9 @@ const routes: Routes = [
 	{ path: 'product/create', component: ProductCreateComponent },
 	{ path: 'product/list', component: ProductListComponent },
 	{ path: 'pr/list', component: PrListComponent },
+	{ path: 'pr/detail/:id', component: PrDetailComponent }, 
+	{ path: 'pr/edit/:id', component: PrEditComponent },
+	{ path: 'pr/create', component: PrCreateComponent },
 	{ path: 'user/login', component: UserLoginComponent }
 	// ,
 	// { path: 'home', component: HomeComponent },
