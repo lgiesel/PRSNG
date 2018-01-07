@@ -11,13 +11,13 @@ export class Product {
        ['Name','PartNumber','Price', 'Id'];
 
    constructor (
-       Id          :  number = 0;
-       VendorId    :  number = 0;
-       PartNumber  :  string = '';
-       Name        :  string = '';
-       Price       :  number = 0.0;
-       Unit        :  string = '';
-       PhotoPath   :  string = ''; )    
+       Id          :  number = 0,
+       VendorId    :  number = 0,
+       PartNumber  :  string = '',
+       Name        :  string = '',
+       Price       :  number = 0,
+       Unit        :  string = '',
+       PhotoPath   :  string = '' )    
    {
        this.Id          = Id;
        this.VendorId    = VendorId;
@@ -26,4 +26,5 @@ export class Product {
        this.Price       = Price;       
        this.Unit        = Unit;
        this.PhotoPath   = PhotoPath;     
+   }
 }

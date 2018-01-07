@@ -37,7 +37,7 @@ export class ProductListComponent implements OnInit {
   	this.ProductSvc.list()
   		.subscribe(products => {
   			this.products = products;
-        this.addVendorName(this.products);        
+        // this.addVendorName(this.products);        
   	    console.log(products);
     });
   }

@@ -1,3 +1,71 @@
-<p>
-  pr-create works!
-</p>
+<app-menu></app-menu>
+
+  <div>
+    <span class='component-title'>{{title}}</span> 
+    | <span><a routerLink='/pr/list'>Back to list</a></span>
+  </div>
+
+<div>
+	<!-- HIDE USERID AFTER LOGIN ADDED - WILL BE LOGGED IN USER ID -->
+	<div class="form-group row">
+		<label class='col-form-label col-sm-2' for="prcode">UserID:</label>
+		<input [(ngModel)]='pr.UserID' desc='UserID' type='text' class='form-control col-sm-6' id='prcode' aria-describedby='emailHelp' placeholder='UserID'>
+		<small id='emailHelp' class="form-text text-muted col-sm-2">The User</small>
+	</div>
+
+  <div class="form-group row">
+    <label class='col-form-label col-sm-2' for="prdesc">Description:</label>
+    <input [(ngModel)]='pr.Description' name='Description' type='text' class='form-control col-sm-6' id='prdesc' aria-describedby='emailHelp' placeholder='Description'>
+    <small id='emailHelp' class="form-text text-muted col-sm-2">The Description</small>
+  </div>	
+
+  <div class="form-group row">
+    <label class='col-form-label col-sm-2' for="prjustification">Justification:</label>
+    <input [(ngModel)]='pr.Justification' name='Justification' type='text' class='form-control col-sm-6' id='prjustification' aria-describedby='emailHelp' placeholder='Justification'>
+    <small id='emailHelp' class="form-text text-muted col-sm-2">The Justification</small>
+  </div>  
+
+  <div class="form-group row">
+    <label class='col-form-label col-sm-2' for="prdateneeded">Date Needed:</label>
+    <input [(ngModel)]='pr.DateNeeded' name='Date Needed' type='text' class='form-control col-sm-6' id='prdateneeded' aria-describedby='emailHelp' placeholder='DateNeeded'>
+    <small id='emailHelp' class="form-text text-muted col-sm-2">The Date Needed</small>
+  </div>
+
+  <div class="form-group row">
+    <label class='col-form-label col-sm-2' for="prdeliverymode">Delivery Mode:</label>
+    <input [(ngModel)]='pr.DeliveryMode' name='Delivery Mode' type='text' class='form-control col-sm-6' id='prdeliverymode' aria-describedby='emailHelp' placeholder='DeliveryMode'>
+    <small id='emailHelp' class="form-text text-muted col-sm-2">The Delivery Mode</small>
+  </div>  
+
+  <div class="form-group row">
+    <label class='col-form-label col-sm-2' for="prstatusid">StatusID:</label>
+    <input [(ngModel)]='prstatusidtusID' name='StatusID' type='text' class='form-control col-sm-6' id='prstatusid' aria-describedby='emailHelp' placeholder='StatusID'>
+    <small id='emailHelp' class="form-text text-muted col-sm-2">The StatusID</small>
+  </div>
+
+  <!-- HIDE THIS SINCE PR HDR WILL BE ADDED WO LINE ITEMS - DEFAULT TTL TO 0 -->
+<!-- 
+  <div class="form-group row">
+    <label class='col-form-label col-sm-2' for="prtotal">Total:</label>
+    <input [(ngModel)]='pr.Total' name='Total' type='text' class='form-control col-sm-6' id='prtotal' aria-describedby='emailHelp' placeholder='Total'>
+    <small id='emailHelp' class="form-text text-muted col-sm-2">The Total</small>
+  </div>
+ --><!--  ASSUME THIS WILL BE TODAY'S DATE - REMOVE FROM PAGE
+  <div class="form-group row">
+    <label class='col-form-label col-sm-2' for="prsubmitteddate">Submitted Date:</label>
+    <input [(ngModel)]='pr.SubmittedDate' name='SubmittedDate' type='text' class='form-control col-sm-6' id='prsubmitteddate' aria-describedby='emailHelp' placeholder='SubmittedDate'>
+    <small id='emailHelp' class="form-text text-muted col-sm-2">The Submitted Date</small>
+  </div> -->
+
+  <!-- HIDE THIS AFTER LOGIN ADDED - THIS WILL BE LOGGED IN USER ID -->
+  <div class="form-group row">
+    <label class='col-form-label col-sm-2' for="prupdatebyuser">UpdatedByUser:</label>
+    <input [(ngModel)]='pr.UpdatedByUser' name='UpdatedByUser' type='text' class='form-control col-sm-6' id='prupdatebyuser' aria-describedby='emailHelp' placeholder='UpdatedByUser'>
+    <small id='emailHelp' class="form-text text-muted col-sm-2">The UpdatedByUser</small>
+  </div>
+
+   <div class='form-group'>
+  	<button (click)='create()' class='btn btn-primary'>Add</button>
+  </div>  
+
+</div>

@@ -24,19 +24,19 @@ export class UserLoginComponent implements OnInit {
 					console.log("SysSvc:", this.SysSvc.debug);
 					this.SysSvc.data.displayMenu = true;
 					this.router.navigateByUrl('/user/list');
-				console.log("Authenticate:Users:", users);
+				    console.log("Authenticate:Users:", users);
+		console.log("Authenticate:User3:", this.SysSvc.data.user.instance.FirstName);
 
 				} else {
-					// this.message = "Invalid Username/Password combination. Retry."
-					this.message = "Username: " + this.user.UsernName + " Pwd: " + this.user.Password;
+					this.message = "Invalid Username/Password combination. Retry."
+					// this.message = "Username: " + this.user.UserName + " Pwd: " + this.user.Password;
 			 };
-				// console.log("Authenticate:Users:", users);
-			});
+		});
 	}
 
   constructor(private UserSvc: UserService,
   	          private SysSvc:  SystemService,
-  			  private router:  Router) { }
+  			  private router:  Router) { }S
 
   ngOnInit() {
   }

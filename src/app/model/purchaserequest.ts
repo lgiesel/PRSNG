@@ -3,11 +3,11 @@ export class PurchaseRequest {
   UserID              : number;
   Description         : string;
   Justification       : string;
-  DateNeeded          : Date;
+  DateNeeded          : string;
   DeliveryMode        : string;
   StatusID            : number;
   Total               : number;
-  SubmittedDate       : Date;  
+  SubmittedDate       : string;  
   ReasonForRejection  : string;
   UpdatedByUser       : number;  
 
@@ -23,13 +23,15 @@ export class PurchaseRequest {
       UserID              : number = 0,
       Description         : string = '',
       Justification       : string = '',
-      DateNeeded          : Date = null,
+      DateNeeded          : string = '',
+      // DateNeeded          : Date = null,
       DeliveryMode        : string = '',
       StatusID            : number = 0,
       Total               : number = 0,
-      SubmittedDate       : Date = null,  
+      SubmittedDate       : string = '',  
+      // SubmittedDate       : Date = null,  
       ReasonForRejection  : string = '',
-      UpdatedByUser       : number = 0;     
+      UpdatedByUser       : number = 0     
       )    
    {
        this.Id                 = Id;
@@ -43,4 +45,5 @@ export class PurchaseRequest {
        this.SubmittedDate      = SubmittedDate;  
        this.ReasonForRejection = ReasonForRejection;
        this.UpdatedByUser      = UpdatedByUser;                  
+   }
 }

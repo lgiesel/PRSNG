@@ -1,4 +1,3 @@
-//SWITCH TO PR SERVICE BUT KEEP MODEL AS PURCHASE REQUEST
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';

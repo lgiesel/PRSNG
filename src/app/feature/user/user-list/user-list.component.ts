@@ -14,6 +14,7 @@ export class UserListComponent implements OnInit {
   selectedSortKey: string = 'Id'; 
   sortDesc: string = 'asc';
   sortKeys: string[] = User.sortableKeys;
+  isAdmin: boolean = false;
   users: User[];
 
   constructor(private UserSvc: UserService,
@@ -22,7 +23,8 @@ export class UserListComponent implements OnInit {
   ngOnInit() {
   	this.UserSvc.list()
   		.subscribe(users => {
-  			this.users = users;
+        this.users = users;
+        console.log ('Admin=' + this.SysSvc.data.user.instance.IsAdmin);
   	    console.log(users);
     });
   }

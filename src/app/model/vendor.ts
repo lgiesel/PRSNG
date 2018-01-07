@@ -14,16 +14,16 @@ export class Vendor {
        ['Name','City','State', 'PreApproved', 'Code', 'Id'];
 
    constructor (
-       Id          :  number =0;
-       Code        :  string = '';
-       Name        :  string = '';
-       Address     :  string = '';
-       City        :  string = '';
-       State       :  string = '';
-       Zip         :  string = '';
-       Phone       :  string = '';
-       Email       :  string = '';
-       PreApproved :  boolean = true; )    
+       Id          :  number =0,
+       Code        :  string = '',
+       Name        :  string = '',
+       Address     :  string = '',
+       City        :  string = '',
+       State       :  string = '',
+       Zip         :  string = '',
+       Phone       :  string = '',
+       Email       :  string = '',
+       PreApproved :  boolean = true )    
    {
        this.Id          = Id;
        this.Code        = Code;
@@ -35,4 +35,5 @@ export class Vendor {
        this.Phone       = Phone;
        this.Email       = Email;
        this.PreApproved = PreApproved;      
+   }
 }
