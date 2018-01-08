@@ -11,15 +11,6 @@
 
   <div *ngIf='pr'>
 
-<!--     <div class='form-group row'>
-      <label class='col-form-label col-sm-2' for='produtuser'>Vendr:</label>
-      <div class='col-sm-6 select-list'>
-        <select [(ngModel)]='produt.UserID' [compareWith]='compareFn' class='form-control' name='Vendr' id='produt-Vendr'>
-          <option *ngFor="let Vendr of users" [ngValue]="Vendr.Id" [selected]='userID == produt.UserID'>{{Vendr.Name}}</option> 
-        </select>
-      </div>
-    </div> -->
-
     <div class="form-group row">
       <label class='col-form-label col-sm-2' for="prid">Purch Req ID:</label>
       <input [(ngModel)]='pr.Id' name='prid' type='text' class='form-control col-sm-6' id='prid' aria-describedby='emailHelp' placeholder='PurchReq ID'>
@@ -66,24 +57,6 @@
       <label class='col-form-label col-sm-2' for="total">Total:</label>
       <input [(ngModel)]='pr.Total' name='total' type='text' class='form-control col-sm-6' id='total' aria-describedby='emailHelp' placeholder='Total'>
       <small id='emailHelp' class="form-text text-muted col-sm-2">The Total</small>
-    </div>  
-
-    <div class="form-group row">
-      <label class='col-form-label col-sm-2' for="submitteddate">SubmittedDate:</label>
-      <input [(ngModel)]='pr.SubmittedDate' name='submitteddate' type='text' class='form-control col-sm-6' id='submitteddate' aria-describedby='emailHelp' placeholder='SubmittedDate'>
-      <small id='emailHelp' class="form-text text-muted col-sm-2">The Submitted Date</small>
-    </div>  
-
-    <div class="form-group row">
-      <label class='col-form-label col-sm-2' for="reasonforrejection">ReasonForRejection:</label>
-      <input [(ngModel)]='pr.ReasonForRejection' name='reasonforrejection' type='text' class='form-control col-sm-6' id='reasonforrejection' aria-describedby='emailHelp' placeholder='ReasonForRejection'>
-      <small id='emailHelp' class="form-text text-muted col-sm-2">The Reason for Rejection</small>
-    </div>  
-
-    <div class="form-group row">
-      <label class='col-form-label col-sm-2' for="updatedbyuser">UpdatedByUser:</label>
-      <input [(ngModel)]='pr.UpdatedByUser' name='updatedbyuser' type='text' class='form-control col-sm-6' id='updatedbyuser' aria-describedby='emailHelp' placeholder='UpdatedByUser'>
-      <small id='emailHelp' class="form-text text-muted col-sm-2">The User who Updated</small>
     </div>  
 
     <div class='form-group'>
