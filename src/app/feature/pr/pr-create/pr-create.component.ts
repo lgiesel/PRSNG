@@ -17,9 +17,10 @@ export class PrCreateComponent implements OnInit {
   resp: any;
   pr: PurchaseRequest = new PurchaseRequest ();
   user: User = new User();
-  // users: User[];
 
   create(){
+    // this.pr.DateNeeded += 'T00:00:00.000Z';
+    // this.pr.DateNeeded = new Date(this.pr.DateNeeded).toISOString;
     console.log(this.pr);
   	this.PRSvc.create(this.pr)
   		.subscribe(resp => {
@@ -35,24 +36,8 @@ export class PrCreateComponent implements OnInit {
 	            private router: Router) { }
 
   ngOnInit() {
-   // this.UserSvc.list()
-   //    .subscribe(users => this.user.Id = user[0]);
-   //    if(this.SysSvc.data.user.loggedIn) {
-   //      this.pr.UserID = this.SysSvc.data.user.instance;
-   //    } else {
-   //      this.router.navigate(['/user/login']);
-   //      console.error("User not logged in.");
+
       }
 
-    
-   // this.UserSvc.list()
-   //    .subscribe(users => this.user.Id = user[0]);
-   //    if(this.SysSvc.data.user.loggedIn) {
-   //      this.pr.UserID = this.SysSvc.data.user.instance;
-   //    } else {
-   //      this.router.navigate(['/user/login']);
-   //      console.error("User not logged in.");
-   //    }
-  // }  
-
 }
+

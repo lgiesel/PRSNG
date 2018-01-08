@@ -16,15 +16,21 @@ export class PrListComponent implements OnInit {
   sortDesc: string = 'asc';
   sortKeys: string[] = PurchaseRequest.sortableKeys;
   purchreqs: PurchaseRequest[];
-  // products: Product[];
-  // user: User[];
+  users: User[];
+ 
+  compareFn (v1:number, v2: number): boolean {
+    return v1 == v2;
+  }
 
-  constructor(private PRSvc: PrService) { }
+  constructor(private PRSvc: PrService,
+              private UserSvc: UserService) { }
 
   ngOnInit() {
   	this.PRSvc.list()
   		.subscribe(purchreqs => {
   			this.purchreqs = purchreqs;
+        this.UserSvc.list()
+          .subscribe(users => this.users = users);
   	    console.log(purchreqs);
     });  	
   }

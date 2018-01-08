@@ -3,13 +3,12 @@ export class PurchaseRequest {
   UserID              : number;
   Description         : string;
   Justification       : string;
-  DateNeeded          : string;
+  DateNeeded          : Date;
   DeliveryMode        : string;
   StatusID            : number;
   Total               : number;
   SubmittedDate       : string;  
-  ReasonForRejection  : string;
-  UpdatedByUser       : number;  
+
 
   // FOR THE TWO DATE TIMESTAMPS - DATENEEDED, SUBMITTED DATE
   // @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss.SSS")  
@@ -23,15 +22,12 @@ export class PurchaseRequest {
       UserID              : number = 0,
       Description         : string = '',
       Justification       : string = '',
-      DateNeeded          : string = '',
-      // DateNeeded          : Date = null,
+      DateNeeded          : Date = null,
       DeliveryMode        : string = '',
       StatusID            : number = 0,
       Total               : number = 0,
-      SubmittedDate       : string = '',  
-      // SubmittedDate       : Date = null,  
-      ReasonForRejection  : string = '',
-      UpdatedByUser       : number = 0     
+      SubmittedDate       : string = '' 
+      // SubmittedDate       : Date = null, 
       )    
    {
        this.Id                 = Id;
@@ -42,8 +38,6 @@ export class PurchaseRequest {
        this.DeliveryMode       = DeliveryMode;
        this.StatusID           = StatusID;
        this.Total              = Total;
-       this.SubmittedDate      = SubmittedDate;  
-       this.ReasonForRejection = ReasonForRejection;
-       this.UpdatedByUser      = UpdatedByUser;                  
+       this.SubmittedDate      = SubmittedDate;               
    }
 }

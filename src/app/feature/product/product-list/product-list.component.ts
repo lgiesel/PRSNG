@@ -23,21 +23,21 @@ export class ProductListComponent implements OnInit {
 
   addVendorName(prods: Product[]) {
      for(let prod of prods) {
-        console.log("Getting Vendor Name for VendorId: " + prod.VendorId);
-        this.VendorSvc.get(prod.VendorId)
+        this.VendorSvc.get(prod.VendorID)
          .subscribe(vendor => {
-             prod.Name = vendor[0].Name;
+             prod.VendorName = vendor[0].Name;
              console.log(prod);
            });
      }
   }
+        // console.log("Getting Vendor Name for VendorId: " + prod.VendorId);
         //console.log("VendorName Retreived is " + prod.VendorName);
 
   ngOnInit() {
   	this.ProductSvc.list()
   		.subscribe(products => {
   			this.products = products;
-        // this.addVendorName(this.products);        
+        this.addVendorName(this.products);        
   	    console.log(products);
     });
   }

@@ -23,6 +23,7 @@
 	</div>
 
 	<p *ngIf='!purchreqs'>The data is loading...</p>
+
 	<table class='table table-sm' *ngIf='purchreqs'>
 
 		<tr>
@@ -34,24 +35,21 @@
 			<th>DeliveryMode</th>
 			<th>StatusID</th>
 			<th>Total</th>
-			<th>SubmittedDate</th>
-			<th>Reject Reason</th>
-			<th>UpdatedByUser</th>			
 			<th>Action</th>					
 		</tr>
 
 		<tr *ngFor='let pr of purchreqs | sort:selectedSortKey:sortDesc'>
 			<td>{{pr.Id}}</td>		
-			<td>{{pr.UserID}}</td>		
+			<td>{{pr.UserId}}</td>		
+			<!-- <td>{{pr.UserId}}</td>		 -->
+<!-- <td *ngFor='let user of users' (click)='loadUser(user.ID)>{{user.Name}}</td>		 -->
+    <!-- <td>{{user[pr.UserID].Name}}</td>		 -->
 			<td>{{pr.Description}}</td>	
 			<td>{{pr.Justification}}</td>
 			<td>{{pr.DateNeeded}}</td>
 			<td>{{pr.DeliveryMode}}</td>
 			<td>{{pr.StatusID}}</td>
 			<td>{{pr.Total}}</td>
-			<td>{{pr.SubmittedDate}}</td>
-			<td>{{pr.ReasonForRejection}}</td>
-			<td>{{pr.UpdatedByUser}}</td>
 
 			<td class='actions'>
 				<a routerLink='/pr/detail/{{pr.Id}}'><img src='assets/detail.png' title='Detail'></a>
@@ -61,5 +59,3 @@
 
 	</table>
 </div>
-
-

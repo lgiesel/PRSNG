@@ -1,6 +1,7 @@
 export class Product {
    Id          :  number;
-   VendorId    :  number;
+   VendorID    :  number;
+   VendorName  :  string;
    PartNumber  :  string;
    Name        :  string;
    Price       :  number;
@@ -11,8 +12,9 @@ export class Product {
        ['Name','PartNumber','Price', 'Id'];
 
    constructor (
-       Id          :  number = 0,
+       ID          :  number = 0,
        VendorId    :  number = 0,
+       VendorName  :  string = '';
        PartNumber  :  string = '',
        Name        :  string = '',
        Price       :  number = 0,
@@ -20,7 +22,8 @@ export class Product {
        PhotoPath   :  string = '' )    
    {
        this.Id          = Id;
-       this.VendorId    = VendorId;
+       this.VendorID    = VendorId;
+       this.VendorName  = VendorName;
        this.PartNumber  = PartNumber;
        this.Name        = Name;
        this.Price       = Price;       
