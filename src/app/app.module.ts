@@ -11,6 +11,7 @@ import { UserService } from './service/user.service';
 import { VendorService } from './service/vendor.service';
 import { ProductService } from './service/product.service';
 import { PrService } from './service/pr.service';
+import { PrliService } from './service/prli.service';
 import { SystemService } from './service/system.service';
 import { MenuComponent } from './core/menu/menu.component';
 import { SortPipe } from './util/sort-pipe';
@@ -30,6 +31,10 @@ import { PrListComponent } from './feature/pr/pr-list/pr-list.component';
 import { PrDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
 import { PrEditComponent } from './feature/pr/pr-edit/pr-edit.component';
 import { PrCreateComponent } from './feature/pr/pr-create/pr-create.component';
+import { PrliListComponent } from './feature/prli/prli-list/prli-list.component';
+import { PrliCreateComponent } from './feature/prli/prli-create/prli-create.component';
+import { PrliEditComponent } from './feature/prli/prli-edit/prli-edit.component';
+import { PrliDetailComponent } from './feature/prli/prli-detail/prli-detail.component';
    
 @NgModule({
   declarations: [
@@ -53,15 +58,19 @@ import { PrCreateComponent } from './feature/pr/pr-create/pr-create.component';
     PrDetailComponent,
     PrEditComponent,
     PrCreateComponent,
+    PrliListComponent,
+    PrliCreateComponent,
+    PrliEditComponent,
+    PrliDetailComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [UserService, VendorService, ProductService, 
-              PrService, SystemService],
+              PrService, PrliService, SystemService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

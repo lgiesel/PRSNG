@@ -16,6 +16,10 @@ import { PrListComponent } from './feature/pr/pr-list/pr-list.component';
 import { PrDetailComponent } from './feature/pr/pr-detail/pr-detail.component';
 import { PrEditComponent } from './feature/pr/pr-edit/pr-edit.component';
 import { PrCreateComponent } from './feature/pr/pr-create/pr-create.component';
+import { PrliListComponent } from './feature/prli/prli-list/prli-list.component';
+import { PrliCreateComponent } from './feature/prli/prli-create/prli-create.component';
+import { PrliEditComponent } from './feature/prli/prli-edit/prli-edit.component';
+import { PrliDetailComponent } from './feature/prli/prli-detail/prli-detail.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 
 //Order matters: most specific 1st, then general
@@ -37,6 +41,10 @@ const routes: Routes = [
 	{ path: 'pr/detail/:id', component: PrDetailComponent }, 
 	{ path: 'pr/edit/:id', component: PrEditComponent },
 	{ path: 'pr/create', component: PrCreateComponent },
+	{ path: 'prli/list', component: PrListComponent },
+	{ path: 'prli/detail/:id', component: PrDetailComponent }, 
+	{ path: 'prli/edit/:id', component: PrEditComponent },
+	{ path: 'prli/create', component: PrCreateComponent },
 	{ path: 'user/login', component: UserLoginComponent }
 	// ,
 	// { path: 'home', component: HomeComponent },

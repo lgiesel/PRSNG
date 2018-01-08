@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PrService } from '@svc/pr.service';
 import { PurchaseRequest } from '@model/purchaserequest';
+import { UserService } from '@svc/user.service';
+import { User } from '@model/user';
 
 @Component({
   selector: 'app-pr-list',
