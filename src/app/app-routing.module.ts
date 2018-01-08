@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './core/home/home.component'; 
 import { UserListComponent } from './feature/user/user-list/user-list.component';
 import { UserDetailComponent } from './feature/user/user-detail/user-detail.component';
 import { UserCreateComponent } from './feature/user/user-create/user-create.component';
@@ -21,6 +22,7 @@ import { PrliCreateComponent } from './feature/prli/prli-create/prli-create.comp
 import { PrliEditComponent } from './feature/prli/prli-edit/prli-edit.component';
 import { PrliDetailComponent } from './feature/prli/prli-detail/prli-detail.component';
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
+import { AboutComponent } from './core/about/about.component'; 
 
 //Order matters: most specific 1st, then general
 const routes: Routes = [
@@ -45,13 +47,12 @@ const routes: Routes = [
 	{ path: 'prli/detail/:id', component: PrDetailComponent }, 
 	{ path: 'prli/edit/:id', component: PrEditComponent },
 	{ path: 'prli/create', component: PrCreateComponent },
-	{ path: 'user/login', component: UserLoginComponent }
-	// ,
-	// { path: 'home', component: HomeComponent },
-	// { path: 'about', component: AboutComponent },
-	// { path: '**', component: HomeComponent },
+	{ path: 'user/login', component: UserLoginComponent },
+	{ path: 'home', component: HomeComponent },
+	{ path: 'about', component: AboutComponent },
+	{ path: '**', component: HomeComponent }
 ];
-//Point not looged in user to userlist rather than home
+//Point not logged in user to userlist rather than home
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

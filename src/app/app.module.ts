@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 
+import { HomeComponent } from './core/home/home.component'; 
 import { AppComponent } from './app.component';
 import { UserListComponent } from './feature/user/user-list/user-list.component';
 import { UserService } from './service/user.service';
@@ -35,10 +36,13 @@ import { PrliListComponent } from './feature/prli/prli-list/prli-list.component'
 import { PrliCreateComponent } from './feature/prli/prli-create/prli-create.component';
 import { PrliEditComponent } from './feature/prli/prli-edit/prli-edit.component';
 import { PrliDetailComponent } from './feature/prli/prli-detail/prli-detail.component';
+import { AboutComponent } from './core/about/about.component'; 
    
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    AboutComponent,
     UserListComponent,
     MenuComponent,
     SortPipe,
