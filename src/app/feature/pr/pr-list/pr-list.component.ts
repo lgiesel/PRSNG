@@ -22,6 +22,16 @@ export class PrListComponent implements OnInit {
     return v1 == v2;
   }
 
+  addUserName(prs: PurchaseRequest[]) {
+     for(let pr of prs) {
+        this.UserSvc.get(pr.UserID)
+         .subscribe(User => {
+             pr.UserName = User[0].FirstName + ' ' + User[0].LastName;
+             console.log(pr);
+           });
+     }
+  }
+
   constructor(private PRSvc: PrService,
               private UserSvc: UserService) { }
 
@@ -31,7 +41,8 @@ export class PrListComponent implements OnInit {
   			this.purchreqs = purchreqs;
         this.UserSvc.list()
           .subscribe(users => this.users = users);
-  	    console.log(purchreqs);
+        this.addUserName(this.purchreqs);        
+   	    console.log(purchreqs);
     });  	
   }
 

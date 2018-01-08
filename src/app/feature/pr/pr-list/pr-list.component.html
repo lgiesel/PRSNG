@@ -28,7 +28,7 @@
 
 		<tr>
 			<th>ID</th>
-			<th>UserID</th>
+			<th>User</th>
 			<th>Description</th>
 			<th>Justification</th>
 			<th>DateNeeded</th>
@@ -40,10 +40,8 @@
 
 		<tr *ngFor='let pr of purchreqs | sort:selectedSortKey:sortDesc'>
 			<td>{{pr.Id}}</td>		
-			<td>{{pr.UserId}}</td>		
 			<!-- <td>{{pr.UserId}}</td>		 -->
-<!-- <td *ngFor='let user of users' (click)='loadUser(user.ID)>{{user.Name}}</td>		 -->
-    <!-- <td>{{user[pr.UserID].Name}}</td>		 -->
+			<td>{{pr.UserName}}</td>		
 			<td>{{pr.Description}}</td>	
 			<td>{{pr.Justification}}</td>
 			<td>{{pr.DateNeeded}}</td>

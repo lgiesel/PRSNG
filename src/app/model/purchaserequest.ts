@@ -1,6 +1,7 @@
 export class PurchaseRequest {
   Id                  : number;
   UserID              : number;
+  UserName            : string;
   Description         : string;
   Justification       : string;
   DateNeeded          : Date;
@@ -15,11 +16,12 @@ export class PurchaseRequest {
   // Timestamp dateNeeded;
 
    static sortableKeys =
-       ['UserID','DateNeeded','Total', 'StatusId'];
+       ['UserName','DateNeeded','Total', 'StatusId'];
 
    constructor (
       Id                  : number = 0,
       UserID              : number = 0,
+      UserName            : string = '',
       Description         : string = '',
       Justification       : string = '',
       DateNeeded          : Date = null,
@@ -32,6 +34,7 @@ export class PurchaseRequest {
    {
        this.Id                 = Id;
        this.UserID             = UserID;   
+       this.UserName           = UserName;
        this.Description        = Description;
        this.Justification      = Justification;
        this.DateNeeded         = DateNeeded;
