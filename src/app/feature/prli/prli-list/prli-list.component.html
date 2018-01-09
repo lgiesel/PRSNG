@@ -26,7 +26,7 @@
 		<td>{{pr.Description}}</td>	
 		<td>{{pr.Justification}}</td>	
 		<td>{{pr.DateNeeded}}</td>
-	    <td>{{pr.Total}}</td>		
+	    <td>{{pr.Total | currency}}</td>		
 	</tr>		
 </table>
 </div>
@@ -48,9 +48,9 @@
 			<td>{{prli.Id}}</td>	
 			<!-- <td>{{prli.PurchaseRequestID}}</td>		 -->
 			<td>{{prli.ProductName}}</td>	
-			<td>{{prli.ProductPrice}}</td>	
+			<td>{{prli.ProductPrice | currency}}</td>	
 			<td>{{prli.Quantity}}</td>
-			<td>{{prli.LineItemTotal}}</td>
+			<td>{{prli.LineItemTotal | currency}}</td>
 
 			<td class='actions'>
 				<a routerLink='/prli/detail/{{prli.Id}}'><img src='assets/detail.png' title='Detail'></a>

@@ -20,12 +20,12 @@ export class PurchaseRequestLineItem {
       LineItemTotal       : number = 0
       )    
    {
-       this.Id                 = Id;
-       this.PurchaseRequestID  = PurchaseRequestID;
-       this.ProductID          = ProductID;
-       this.ProductName        = ProductName;
-       this.ProductPrice       = ProductPrice;
-       this.Quantity           = Quantity;
-       this.LineItemTotal      = LineItemTotal;
+       this.Id                  = Id;
+       this.PurchaseRequestID   = PurchaseRequestID;
+       this.ProductID           = ProductID;
+       this.ProductName         = ProductName;
+       this.ProductPrice        = ProductPrice;
+       this.Quantity            = Quantity;
+       this.LineItemTotal       = LineItemTotal;
    }
 }

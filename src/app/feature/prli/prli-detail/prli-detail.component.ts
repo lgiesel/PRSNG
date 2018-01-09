@@ -25,7 +25,7 @@ export class PrliDetailComponent implements OnInit {
   		.subscribe(resp => {
   			this.resp = resp;
   			console.log("PurchaseRequestLI-Detail-Remove:", this.resp);
-  			this.router.navigate(['/prli/list']);
+  			this.router.navigate(['/prli/list/this.prli.PurchaseRequestID']);
   		});
   }
 
