@@ -1,12 +1,24 @@
 <app-menu></app-menu>
 
-<!-- <div class='component-content' *ngIf='prli'> 
+<div class='component-content' *ngIf='prli'> 
 
 	<div>
 		<span class='component-title'>{{title}}</span> 
-		 <span><a routerLink='/pr/create'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'></a></span>
-		| <span><a routerLink='/pr/list'>Back to list</a></span>
-	</div> -->
-<p>
-  prli-detail works!
-</p>
+		 <span><a routerLink='/prli/create'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'></a></span>
+		| <span><a routerLink='/prli/list'>Back to list</a></span>
+	</div>
+	
+	<p *ngIf='undefined'>Loading ...</p>
+		<table> 
+		<tr><th>ID:</th><td>{{prli.Id}}</td></tr>
+		<tr><th>PurchaseRequestID:</th><td>{{prli.PurchaseRequestID}}</td></tr>
+		<tr><th>ProductID:</th><td>{{prli.ProductID}}</td></tr>
+		<tr><th>Quantity:</th><td>{{prli.Quantity}}</td></tr>
+		<tr>
+			<td colspan="2">
+				<a routerLink='/prli/edit/{{prli.Id}}' class='btn btn-primary' title='Edit'>Edit</a>
+				<button (click)="remove(prli.Id)" class='btn btn-danger' title='Delete'>Remove</button>
+			</td>
+		</tr>
+	</table>
+</div>

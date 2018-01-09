@@ -1,6 +1,15 @@
 <app-menu></app-menu>
+<div *ngIf='pr'	>	
+<div class='component-content'>
+	<span class='component-title'>{{title}}</span> 
+	 <span>
+	 	<a routerLink='/user/create'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'>
+			| <span><a routerLink='/user/list'>Back to list</a></span>
+	 	</a>
+	 </span>
+</div>	
 
-<div  *ngIf='pr'>
+<p *ngIf='undefined'>Loading ...</p>
 
 <table class='table table-sm'>
 	<tr>
@@ -38,15 +47,16 @@
 			<!-- <td>{{prli.PurchaseRequestID}}</td>		 -->
 			<td>{{prli.ProductName}}</td>	
 			<td>{{prli.Quantity}}</td>
+
+			<td class='actions'>
+				<a routerLink='/prli/detail/{{prli.Id}}'><img src='assets/detail.png' title='Detail'></a>
+				<a routerLink='/prli/edit/{{prli.Id}}'>
+					<img src='assets/edit.png' title='Edit'>
+				</a>
+			</td>
+
 		</tr>
 	</table>
 
 </div>
 
-
-<!-- Ttotal allk prli for each prli add, edit, delete -
-- Add calc routine in prli java controller
-- Call recalc routine from controller.create, edit, delete
--  -->
-
-<!-- SYSSRV inject into detail page to remove 3 btns -->
