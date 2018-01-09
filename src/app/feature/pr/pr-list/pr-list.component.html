@@ -39,8 +39,7 @@
 		</tr>
 
 		<tr *ngFor='let pr of purchreqs | sort:selectedSortKey:sortDesc'>
-			<td>{{pr.Id}}</td>		
-			<!-- <td>{{pr.UserId}}</td>		 -->
+			<td>{{pr.Id}}</td>	
 			<td>{{pr.UserName}}</td>		
 			<td>{{pr.Description}}</td>	
 			<td>{{pr.Justification}}</td>
@@ -52,6 +51,8 @@
 			<td class='actions'>
 				<a routerLink='/pr/detail/{{pr.Id}}'><img src='assets/detail.png' title='Detail'></a>
 				<a routerLink='/pr/edit/{{pr.Id}}'><img src='assets/edit.png' title='Edit'></a>
+				<a routerLink='/prli/list/{{pr.Id}}'><img src='assets/lines.png' title='View'></a>			
+<!-- 				<a routerLink='/prli/list/'><img src='assets/lines.png' title='View'></a>			 -->
 			</td>
 		</tr>
 

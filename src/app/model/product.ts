@@ -14,14 +14,14 @@ export class Product {
    constructor (
        ID          :  number = 0,
        VendorId    :  number = 0,
-       VendorName  :  string = '';
+       VendorName  :  string = '',
        PartNumber  :  string = '',
        Name        :  string = '',
        Price       :  number = 0,
        Unit        :  string = '',
        PhotoPath   :  string = '' )    
    {
-       this.Id          = Id;
+       this.Id          = ID;
        this.VendorID    = VendorId;
        this.VendorName  = VendorName;
        this.PartNumber  = PartNumber;

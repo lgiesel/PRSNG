@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 
 import { PurchaseRequestLineItem } from '@model/purchaserequestlineitem'
 
-const url = 'http://localhost:8080/PurchaseRequestLineItemLineItems/';
+const url = 'http://localhost:8080/PurchaseRequestLineItems/';
 
 @Injectable()
 export class PrliService {

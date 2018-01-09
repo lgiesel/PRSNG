@@ -1,13 +1,52 @@
 <app-menu></app-menu>
-<p>
-  prli-list works!
-</p>
 
-    <div class='form-group row'>
-      <label class='col-form-label col-sm-2' for='productvendor'>Vendor:</label>
-      <div class='col-sm-6 select-list'>
-        <select [(ngModel)]='product.VendorID' [compareWith]='compareFn' class='form-control' name='Vendor' id='product-Vendor'>
-          <option *ngFor="let vendor of vendors" [ngValue]="vendor.Id" [selected]='vendorID == product.VendorID'>{{vendor.Name}}</option> 
-        </select>
-      </div>
-    </div>
+<div  *ngIf='pr'>
+
+<table class='table table-sm'>
+	<tr>
+		<th>ID</th>
+		<th>User</th>
+		<th>Description</th>
+		<th>Justification</th>
+		<th>Date Needed</th>
+        <th>Total</th>		
+		</tr>
+	<tr>
+		<td>{{pr.Id}}</td>	
+		<td>{{pr.UserID}}</td>	
+		<td>{{pr.Description}}</td>	
+		<td>{{pr.Justification}}</td>	
+		<td>Date Needed</td>
+	    <td>Total</td>		
+	</tr>		
+</table>
+</div>
+
+<div *ngIf='prlis'>
+
+	<table class='table table-sm'>
+
+		<tr>
+			<th>ID</th>
+			<th>PurchaseRequestID</th>
+			<th>ProductID</th>
+			<th>Quantity</th>				
+		</tr>
+
+		<tr *ngFor='let prli of prlis'>
+			<td>{{prli.Id}}</td>	
+			<td>{{prli.PurchaseRequestID}}</td>		
+			<td>{{prli.ProductID}}</td>	
+			<td>{{prli.ProductID}}</td>
+		</tr>
+	</table>
+
+</div>
+
+
+<!-- Ttotal allk prli for each prli add, edit, delete -
+- Add calc routine in prli java controller
+- Call recalc routine from controller.create, edit, delete
+-  -->
+
+<!-- SYSSRV inject into detail page to remove 3 btns -->
