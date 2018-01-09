@@ -34,6 +34,7 @@ export class PrliDetailComponent implements OnInit {
      .subscribe(Product => {
        prli.ProductName = Product[0].Name;
        prli.ProductPrice = Product[0].Price;
+       prli.LineItemTotal = Product[0].Price * this.prli.Quantity;
        console.log("addProdN: " + prli);
      });
    } 

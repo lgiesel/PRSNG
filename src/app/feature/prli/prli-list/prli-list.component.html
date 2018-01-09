@@ -38,15 +38,19 @@
 		<tr>
 			<th>ID</th>
 			<!-- <th>PurchaseRequestID</th> -->
-			<th>Product</th>
+			<th>Product Name</th>
+			<th>Product Price</th>
 			<th>Quantity</th>				
+			<th>Line Item Total</th>				
 		</tr>
 
 		<tr *ngFor='let prli of prlis'>
 			<td>{{prli.Id}}</td>	
 			<!-- <td>{{prli.PurchaseRequestID}}</td>		 -->
 			<td>{{prli.ProductName}}</td>	
+			<td>{{prli.ProductPrice}}</td>	
 			<td>{{prli.Quantity}}</td>
+			<td>{{prli.LineItemTotal}}</td>
 
 			<td class='actions'>
 				<a routerLink='/prli/detail/{{prli.Id}}'><img src='assets/detail.png' title='Detail'></a>

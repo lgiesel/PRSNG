@@ -10,11 +10,13 @@
 	
 	<p *ngIf='undefined'>Loading ...</p>
 		<table> 
-<!-- 		<tr><th>ID: </th><td>{{prli.Id}}</td></tr>
-		<tr><th>PurchaseRequestID: </th><td>{{prli.PurchaseRequestID}}</td></tr> -->	 
+		<tr><th>ID: </th><td>{{prli.Id}}</td></tr>
+		<tr><th>PurchaseRequestID: </th><td>{{prli.PurchaseRequestID}}</td></tr>	 
 		<tr><th>Product Name: </th><td>{{prli.ProductName}}</td></tr>
 		<tr><th>Product Price: </th><td>{{prli.ProductPrice}}</td></tr>
 		<tr><th>Quantity: </th><td>{{prli.Quantity}}</td></tr>
+		<tr><th>Line Item Total: </th><td>{{prli.LineItemTotal}}</td></tr>
+
 		<tr>
 			<td colspan="2">
 				<a routerLink='/prli/edit/{{prli.Id}}' class='btn btn-primary' title='Edit'>Edit</a>

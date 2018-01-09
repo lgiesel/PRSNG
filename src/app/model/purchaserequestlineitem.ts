@@ -5,6 +5,7 @@ export class PurchaseRequestLineItem {
    ProductName          : string;
    ProductPrice         : number;
    Quantity             : number;
+   LineItemTotal        : number;
 
    static sortableKeys =
        ['ProductID','Quantity'];
@@ -15,7 +16,8 @@ export class PurchaseRequestLineItem {
       ProductID           : number = 0,
       ProductName         : string = '',
       ProductPrice        : number = 0,
-      Quantity            : number = 0
+      Quantity            : number = 0,
+      LineItemTotal       : number = 0
       )    
    {
        this.Id                 = Id;
@@ -24,5 +26,6 @@ export class PurchaseRequestLineItem {
        this.ProductName        = ProductName;
        this.ProductPrice       = ProductPrice;
        this.Quantity           = Quantity;
+       this.LineItemTotal      = LineItemTotal;
    }
 }
