@@ -4,6 +4,8 @@ import { PrliService } from '@svc/prli.service';
 import { PurchaseRequestLineItem } from '@model/purchaserequestlineitem';
 import { PrService } from '@svc/pr.service';
 import { PurchaseRequest } from '@model/purchaserequest';
+import { ProductService } from '@svc/product.service';
+import { Product } from '@model/product';
 
 @Component({
   selector: 'app-prli-list',
@@ -20,9 +22,11 @@ export class PrliListComponent implements OnInit {
   sortKeys: string[] = PurchaseRequestLineItem.sortableKeys;
   pr: PurchaseRequest;
   prlis: PurchaseRequestLineItem[] = [];
+  products: Product[];
 
   constructor(private PRLISvc: PrliService,
               private PrSvc: PrService,
+              private ProductSvc: ProductService,              
               private router: Router,
               private route: ActivatedRoute) { }
 
@@ -36,6 +40,15 @@ export class PrliListComponent implements OnInit {
     return tempArray;
   }
 
+ addProductName(prlis: PurchaseRequestLineItem[]) {
+     for(let prli of prlis) {
+        this.ProductSvc.get(prli.ProductID)
+         .subscribe(Product => {prli.ProductName = Product[0].Name;
+         console.log(prli);
+           });
+     }
+  }  
+
   ngOnInit() {
     this.route.params.subscribe(parms => this.Id = parms ['id']); 
     this.PrSvc.get(this.Id)
@@ -45,6 +58,7 @@ export class PrliListComponent implements OnInit {
         this.PRLISvc.list()
           .subscribe(prlis => {
              this.prlis = this.selectedPRLIs(prlis);
+        this.addProductName(this.prlis);                     
         })
     });
   }

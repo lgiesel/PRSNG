@@ -4,7 +4,7 @@
 
 <table class='table table-sm'>
 	<tr>
-		<th>ID</th>
+		<!-- <th>ID</th> -->
 		<th>User</th>
 		<th>Description</th>
 		<th>Justification</th>
@@ -12,7 +12,7 @@
         <th>Total</th>		
 		</tr>
 	<tr>
-		<td>{{pr.Id}}</td>	
+		<!-- <td>{{pr.Id}}</td>	 -->
 		<td>{{pr.UserID}}</td>	
 		<td>{{pr.Description}}</td>	
 		<td>{{pr.Justification}}</td>	
@@ -28,16 +28,16 @@
 
 		<tr>
 			<th>ID</th>
-			<th>PurchaseRequestID</th>
-			<th>ProductID</th>
+			<!-- <th>PurchaseRequestID</th> -->
+			<th>Product</th>
 			<th>Quantity</th>				
 		</tr>
 
 		<tr *ngFor='let prli of prlis'>
 			<td>{{prli.Id}}</td>	
-			<td>{{prli.PurchaseRequestID}}</td>		
-			<td>{{prli.ProductID}}</td>	
-			<td>{{prli.ProductID}}</td>
+			<!-- <td>{{prli.PurchaseRequestID}}</td>		 -->
+			<td>{{prli.ProductName}}</td>	
+			<td>{{prli.Quantity}}</td>
 		</tr>
 	</table>
 
