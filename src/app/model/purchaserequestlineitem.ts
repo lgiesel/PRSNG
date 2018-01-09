@@ -3,6 +3,7 @@ export class PurchaseRequestLineItem {
    PurchaseRequestID    : number;
    ProductID            : number;
    ProductName          : string;
+   ProductPrice         : number;
    Quantity             : number;
 
    static sortableKeys =
@@ -13,6 +14,7 @@ export class PurchaseRequestLineItem {
       PurchaseRequestID   : number = 0,
       ProductID           : number = 0,
       ProductName         : string = '',
+      ProductPrice        : number = 0,
       Quantity            : number = 0
       )    
    {
@@ -20,6 +22,7 @@ export class PurchaseRequestLineItem {
        this.PurchaseRequestID  = PurchaseRequestID;
        this.ProductID          = ProductID;
        this.ProductName        = ProductName;
+       this.ProductPrice       = ProductPrice;
        this.Quantity           = Quantity;
    }
 }

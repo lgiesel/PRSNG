@@ -47,8 +47,9 @@ export class PrliListComponent implements OnInit {
  addProductName(prlis: PurchaseRequestLineItem[]) {
      for(let prli of prlis) {
         this.ProductSvc.get(prli.ProductID)
-         .subscribe(Product => {prli.ProductName = Product[0].Name;
-         console.log("addProdN: " + prli);
+         .subscribe(Product => {
+            prli.ProductName = Product[0].Name;
+            console.log("addProdN: " + prli);
          });
      }
   }  

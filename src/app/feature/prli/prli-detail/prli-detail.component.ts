@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { PrliService } from '@svc/prli.service';
 import { PurchaseRequestLineItem } from '@model/purchaserequestlineitem';
+import { ProductService } from '@svc/product.service';
+import { Product } from '@model/product';
 
 @Component({
   selector: 'app-prli-detail',
@@ -15,6 +17,7 @@ export class PrliDetailComponent implements OnInit {
   resp: any;
 
   prli: PurchaseRequestLineItem;	
+  products: Product;
 
   remove(){
     console.log("this.pr.Id:", this.prli.Id);
@@ -26,7 +29,17 @@ export class PrliDetailComponent implements OnInit {
   		});
   }
 
+  addProductName(prli: PurchaseRequestLineItem) {
+    this.ProductSvc.get(prli.ProductID)
+     .subscribe(Product => {
+       prli.ProductName = Product[0].Name;
+       prli.ProductPrice = Product[0].Price;
+       console.log("addProdN: " + prli);
+     });
+   } 
+
   constructor(private PRLISvc: PrliService,
+              private ProductSvc: ProductService,
   	          private router: Router,
   	          private route: ActivatedRoute) { }
 
@@ -36,6 +49,7 @@ export class PrliDetailComponent implements OnInit {
     this.PRLISvc.get(this.Id)
       .subscribe(prli => {
         this.prli = prli.length > 0 ? prli[0] : null;
+        this.addProductName(this.prli);   
         console.log(this.prli);
       });
 
