@@ -21,6 +21,10 @@ export class PrCreateComponent implements OnInit {
   create(){
     // this.pr.DateNeeded += 'T00:00:00.000Z';
     // this.pr.DateNeeded = new Date(this.pr.DateNeeded).toISOString;
+    // COULD DO BELOW TO LET USER ENTER DATE IN D/M/YY FORMAT OR YYYY-MM-DD
+    //   let dt = "1/8/2018"
+    //   let dbdt = new Date (df).toISOString'
+    //  
     console.log(this.pr);
   	this.PRSvc.create(this.pr)
   		.subscribe(resp => {

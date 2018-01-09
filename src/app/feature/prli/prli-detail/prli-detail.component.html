@@ -5,7 +5,7 @@
 	<div>
 		<span class='component-title'>{{title}}</span> 
 		 <span><a routerLink='/prli/create'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'></a></span>
-		| <span><a routerLink='/prli/list'>Back to list</a></span>
+		| <span><a routerLink='/prli/list/{{prli.PurchaseRequestID}}'>Back to list</a></span>
 	</div>
 	
 	<p *ngIf='undefined'>Loading ...</p>
