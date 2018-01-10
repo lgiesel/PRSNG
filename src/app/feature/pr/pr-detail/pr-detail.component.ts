@@ -4,6 +4,8 @@ import { PrService } from '@svc/pr.service';
 import { PurchaseRequest } from '@model/purchaserequest';
 import { StatusService } from '@svc/status.service';
 import { Status } from '@model/status';
+import { UserService } from '@svc/user.service';
+import { User } from '@model/user';
 
 @Component({
   selector: 'app-pr-detail',
@@ -17,6 +19,7 @@ export class PrDetailComponent implements OnInit {
   resp: any;
   pr: PurchaseRequest;	
   status: Status[];
+  user: User[];
 
   remove(){
     console.log("this.pr.Id:", this.pr.Id);
@@ -36,8 +39,17 @@ export class PrDetailComponent implements OnInit {
      });
    }     
 
+  addUserDesc(pr: PurchaseRequest) {
+    this.UserSvc.get(pr.UserID)
+     .subscribe(User => {
+       pr.UserName = User[0].FirstName + " " + User[0].LastName;
+       console.log("addUserDesc: " + pr);
+     });
+   }     
+
   constructor(private PrSvc: PrService, 
               private StatusSvc: StatusService,
+              private UserSvc: UserService,
   	          private router: Router,
   	          private route: ActivatedRoute) { }
 
@@ -47,6 +59,7 @@ export class PrDetailComponent implements OnInit {
       .subscribe(pr => {
         this.pr = pr.length > 0 ? pr[0] : null;
         this.addStatusDesc(this.pr);        
+        this.addUserDesc(this.pr);        
         console.log(this.pr);
     });
   }
