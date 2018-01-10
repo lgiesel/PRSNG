@@ -1,4 +1,35 @@
 <app-menu></app-menu>
-<p>
-  prli-create works!
-</p>
+<div class='component-content'>
+
+  <div>
+    <span class='component-title'>{{title}}</span> 
+    | <span><a routerLink='/prli/list/{{Id}}'>Back to list</a></span> 
+  </div>
+  <p *ngIf='undefined'>Loading ...</p>
+
+  <div *ngIf='prli'>
+	  <div class="form-group row">
+	    <label class='col-form-label col-sm-2' for="productid">ProductID:</label>
+	    <input [(ngModel)]='prli.ProductID' name='ProductID' type="text" class="form-control col-sm-6" id="productid" aria-describedby="emailHelp" placeholder="ProductID">
+	    <small id="emailHelp" class="form-text text-muted col-sm-2">The ProductID</small>
+	  </div>
+
+	  <div class='form-group row' >
+	    <label class='col-form-label col-sm-2' for="productname">ProductName:</label>
+		<div class=' col-sm-6'>
+			<select [(ngModel)]='prli.ProductID' class='form-control' name='ProductName' id='product-Product'>
+				<option *ngFor="let product of products" [ngValue]="product.Id">{{product.Name}}</option>
+			</select>
+		</div>
+	 </div>	  
+
+	  <div class="form-group row">
+	    <label class='col-form-label col-sm-2' for="quantity">Quantity:</label>
+	    <input [(ngModel)]='prli.Quantity' name='Quantity' type="number" class="form-control col-sm-6" id="quantity" aria-describedby="emailHelp" placeholder="Quantity">
+	    <small id="emailHelp" class="form-text text-muted col-sm-2">The Quantity</small>
+	  </div>	  
+
+	  <div class='form-group'>
+	 	<button (click)='create()' class='btn btn-primary'>Add</button>
+	  </div>
+</div>

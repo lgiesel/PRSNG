@@ -23,17 +23,18 @@ export class ProductCreateComponent implements OnInit {
   	this.ProductSvc.create(this.product)
   		.subscribe(resp => {
   			this.resp = resp;
+        // this.product.VendorID = 8; //Default to Acme
   			console.log("Product-Create:", this.resp);
   			this.router.navigate(['/product/list']);
   		});
   }
 
   constructor(private ProductSvc: ProductService,
-  			  private VendorSvc: VendorService,      	     
-	          private router: Router) { }
+  			      private VendorSvc: VendorService,      	     
+	            private router: Router) { 
+  }
 
   ngOnInit() {
-
     this.VendorSvc.list()
       .subscribe(vendors => this.vendors = vendors);    
   }

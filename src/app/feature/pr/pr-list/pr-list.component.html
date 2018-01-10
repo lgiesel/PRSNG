@@ -46,12 +46,12 @@
 			<td>{{pr.DateNeeded}}</td>
 			<td>{{pr.DeliveryMode}}</td>
 			<td>{{pr.StatusID}}</td>
-			<td>{{pr.Total}}</td>
+			<td>{{pr.Total | currency}}</td>
 
 			<td class='actions'>
 				<a routerLink='/pr/detail/{{pr.Id}}'><img src='assets/detail.png' title='Detail'></a>
 				<a routerLink='/pr/edit/{{pr.Id}}'><img src='assets/edit.png' title='Edit'></a>
-				<a routerLink='/prli/list/{{pr.Id}}'><img src='assets/lines.png' title='View'></a>			
+				<a routerLink='/prli/list/{{pr.Id}}'><img src='assets/lines.png' title='View'></a>		
 			</td>
 		</tr>
 

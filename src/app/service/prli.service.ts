@@ -17,12 +17,12 @@ export class PrliService {
   	return this.http.get(url+"Get?id="+id) as Observable<PurchaseRequestLineItem[]>;
   }
 
-  create(pr: PurchaseRequestLineItem): Observable<any> {
-  	return this.http.post(url+"Add", pr) as Observable<any>;
+  create(prli: PurchaseRequestLineItem): Observable<any> {
+  	return this.http.post(url+"Add", prli) as Observable<any>;
   } 
 
-  update(pr: PurchaseRequestLineItem): Observable<any> {
-  	return this.http.post(url+"Update", pr) as Observable<any>;
+  update(prli: PurchaseRequestLineItem): Observable<any> {
+  	return this.http.post(url+"Update", prli) as Observable<any>;
   } 
 
   remove(id): Observable<any> {

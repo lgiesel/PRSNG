@@ -46,7 +46,7 @@ const routes: Routes = [
 	{ path: 'prli/list/:id', component: PrliListComponent },
 	{ path: 'prli/detail/:id', component: PrliDetailComponent }, 
 	{ path: 'prli/edit/:id', component: PrliEditComponent },
-	{ path: 'prli/create', component: PrliCreateComponent },
+	{ path: 'prli/create/:id', component: PrliCreateComponent },
 	{ path: 'user/login', component: UserLoginComponent },
 	{ path: 'home', component: HomeComponent },
 	{ path: 'about', component: AboutComponent },
