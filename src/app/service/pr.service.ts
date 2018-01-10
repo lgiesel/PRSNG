@@ -29,6 +29,10 @@ export class PrService {
   	return this.http.get(url+"Delete?id="+id) as Observable<any>;
   } 
 
+  submit(pr: PurchaseRequest): Observable<any> {
+    return this.http.post(url+"Submit", pr) as Observable<any>;
+  } 
+
   constructor(private http: HttpClient) { }
 
 }

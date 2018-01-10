@@ -31,6 +31,16 @@ export class PrDetailComponent implements OnInit {
   		});
   }
 
+  submit(){
+    console.log(this.pr);
+    this.PrSvc.submit(this.pr)
+      .subscribe(resp => {
+        this.resp = resp;
+        console.log("PurchaseReq-Submit:", this.resp);
+        this.router.navigate(['/pr/list']);
+      });
+  }
+
   addStatusDesc(pr: PurchaseRequest) {
     this.StatusSvc.get(pr.StatusID)
      .subscribe(Status => {
