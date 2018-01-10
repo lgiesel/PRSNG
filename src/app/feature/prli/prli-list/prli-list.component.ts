@@ -8,6 +8,8 @@ import { ProductService } from '@svc/product.service';
 import { Product } from '@model/product';
 import { UserService } from '@svc/user.service';
 import { User } from '@model/user';
+import { StatusService } from '@svc/status.service';
+import { Status } from '@model/status';
 
 @Component({
   selector: 'app-prli-list',
@@ -26,13 +28,7 @@ export class PrliListComponent implements OnInit {
   prlis: PurchaseRequestLineItem[] = [];
   products: Product[];
   users: User[];
-
-  constructor(private PRLISvc: PrliService,
-              private PrSvc: PrService,
-              private ProductSvc: ProductService,  
-              private UserSvc: UserService,            
-              private router: Router,
-              private route: ActivatedRoute) { }
+  status: Status[];
 
   selectedPRLIs (prlis: PurchaseRequestLineItem[]) {
     let tempArray: PurchaseRequestLineItem[]=[];
@@ -64,6 +60,23 @@ export class PrliListComponent implements OnInit {
      });        
   }
 
+
+  addStatusDesc(pr: PurchaseRequest) {
+    this.StatusSvc.get(pr.StatusID)
+     .subscribe(Status => {
+       pr.StatusDesc = Status[0].Description;
+       console.log("addStatusDesc: " + pr);
+     });
+   }   
+
+  constructor(private PRLISvc: PrliService,
+              private PrSvc: PrService,
+              private ProductSvc: ProductService,  
+              private UserSvc: UserService,            
+              private StatusSvc: StatusService,
+              private router: Router,
+              private route: ActivatedRoute) { }
+
   ngOnInit() {
     this.route.params.subscribe(parms => this.Id = parms ['id']); 
     this.PrSvc.get(this.Id)
@@ -82,6 +95,7 @@ export class PrliListComponent implements OnInit {
             this.users = users;
             this.addUserName(this.pr);
         });
+        this.addStatusDesc(this.pr);                  
     });
   }
  }
