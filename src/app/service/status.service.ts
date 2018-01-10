@@ -2,26 +2,26 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
-import { Product } from '@model/product'
+import { Status } from '@model/status'
 
-const url = 'http://localhost:8080/Products/';
+const url = 'http://localhost:8080/Statuses/';
 
 @Injectable()
-export class ProductService {
+export class StatusService {
 
-  list(): Observable<Product[]> {
-  	return this.http.get(url+"List") as Observable<Product[]>;
+  list(): Observable<Status[]> {
+  	return this.http.get(url+"List") as Observable<Status[]>;
   } 
 
-  get(id): Observable<Product[]>{
-  	return this.http.get(url+"Get?id="+id) as Observable<Product[]>;
+  get(id): Observable<Status[]>{
+  	return this.http.get(url+"Get?id="+id) as Observable<Status[]>;
   }
 
-  create(product: Product): Observable<any> {
+  create(product: Status): Observable<any> {
   	return this.http.post(url+"Add", product) as Observable<any>;
   } 
 
-  update(product: Product): Observable<any> {
+  update(product: Status): Observable<any> {
   	return this.http.post(url+"Update", product) as Observable<any>;
   } 
 

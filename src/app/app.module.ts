@@ -13,6 +13,7 @@ import { VendorService } from './service/vendor.service';
 import { ProductService } from './service/product.service';
 import { PrService } from './service/pr.service';
 import { PrliService } from './service/prli.service';
+import { StatusService } from './service/status.service';
 import { SystemService } from './service/system.service';
 import { MenuComponent } from './core/menu/menu.component';
 import { SortPipe } from './util/sort-pipe';
@@ -73,7 +74,7 @@ import { AboutComponent } from './core/about/about.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [UserService, VendorService, ProductService, 
+  providers: [UserService, VendorService, ProductService, StatusService,
               PrService, PrliService, SystemService],
   bootstrap: [AppComponent]
 })

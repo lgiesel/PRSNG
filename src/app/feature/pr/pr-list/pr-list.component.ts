@@ -3,6 +3,8 @@ import { PrService } from '@svc/pr.service';
 import { PurchaseRequest } from '@model/purchaserequest';
 import { UserService } from '@svc/user.service';
 import { User } from '@model/user';
+import { StatusService } from '@svc/status.service';
+import { Status } from '@model/status';
 
 @Component({
   selector: 'app-pr-list',
@@ -17,6 +19,7 @@ export class PrListComponent implements OnInit {
   sortKeys: string[] = PurchaseRequest.sortableKeys;
   purchreqs: PurchaseRequest[];
   users: User[];
+  statuses: Status[];
  
   compareFn (v1:number, v2: number): boolean {
     return v1 == v2;
@@ -32,8 +35,19 @@ export class PrListComponent implements OnInit {
      }
   }
 
+  addStatusName(prs: PurchaseRequest[]) {
+     for(let pr of prs) {
+        this.StatusSvc.get(pr.StatusID)
+         .subscribe(Status => {
+             pr.StatusDesc = Status[0].Description;
+             console.log(pr);
+           });
+     }
+  }
+
   constructor(private PRSvc: PrService,
-              private UserSvc: UserService) { }
+              private UserSvc: UserService,
+              private StatusSvc : StatusService) { }
 
   ngOnInit() {
   	this.PRSvc.list()
@@ -42,6 +56,9 @@ export class PrListComponent implements OnInit {
         this.UserSvc.list()
           .subscribe(users => this.users = users);
         this.addUserName(this.purchreqs);        
+        this.StatusSvc.list()
+          .subscribe(statuses => this.statuses = statuses);
+        this.addStatusName(this.purchreqs);        
    	    console.log(purchreqs);
     });  	
   }

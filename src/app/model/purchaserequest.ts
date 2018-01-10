@@ -7,6 +7,7 @@ export class PurchaseRequest {
   DateNeeded          : Date;
   DeliveryMode        : string;
   StatusID            : number;
+  StatusDesc          : string;
   Total               : number;
   SubmittedDate       : string;  
 
@@ -27,9 +28,9 @@ export class PurchaseRequest {
       DateNeeded          : Date = null,
       DeliveryMode        : string = '',
       StatusID            : number = 0,
+      StatusDesc          : string = '',
       Total               : number = 0,
       SubmittedDate       : string = '' 
-      // SubmittedDate       : Date = null, 
       )    
    {
        this.Id                 = Id;
@@ -40,6 +41,7 @@ export class PurchaseRequest {
        this.DateNeeded         = DateNeeded;
        this.DeliveryMode       = DeliveryMode;
        this.StatusID           = StatusID;
+       this.StatusDesc         = StatusDesc;       
        this.Total              = Total;
        this.SubmittedDate      = SubmittedDate;               
    }
