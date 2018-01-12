@@ -33,6 +33,10 @@ export class PrService {
     return this.http.post(url+"Submit", pr) as Observable<any>;
   } 
 
+  reviewlist(id): Observable<PurchaseRequest[]> {
+    return this.http.get(url+"GetNot") as Observable<PurchaseRequest[]>;
+  } 
+
   constructor(private http: HttpClient) { }
 
 }

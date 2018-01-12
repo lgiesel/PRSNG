@@ -21,6 +21,8 @@ import { PrliListComponent } from './feature/prli/prli-list/prli-list.component'
 import { PrliCreateComponent } from './feature/prli/prli-create/prli-create.component';
 import { PrliEditComponent } from './feature/prli/prli-edit/prli-edit.component';
 import { PrliDetailComponent } from './feature/prli/prli-detail/prli-detail.component';
+import { PrReviewlistComponent } from './feature/pr/pr-reviewlist/pr-reviewlist.component';
+import { PrReviewdetailComponent } from './feature/pr/pr-reviewdetail/pr-reviewdetail.component'; 
 import { UserLoginComponent } from './feature/user/user-login/user-login.component';
 import { AboutComponent } from './core/about/about.component'; 
 
@@ -43,6 +45,8 @@ const routes: Routes = [
 	{ path: 'pr/detail/:id', component: PrDetailComponent }, 
 	{ path: 'pr/edit/:id', component: PrEditComponent },
 	{ path: 'pr/create', component: PrCreateComponent },
+	{ path: 'pr/reviewlist/:id', component: PrReviewlistComponent },
+	{ path: 'pr/reviewdetail', component: PrReviewdetailComponent },
 	{ path: 'prli/list/:id', component: PrliListComponent },
 	{ path: 'prli/detail/:id', component: PrliDetailComponent }, 
 	{ path: 'prli/edit/:id', component: PrliEditComponent },
