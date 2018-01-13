@@ -82,7 +82,6 @@ export class PrliListComponent implements OnInit {
     this.PrSvc.get(this.Id)
       .subscribe(prs => {
         this.pr = prs.length > 0 ? prs[0] : null;
-        // console.log(this.pr);
 
         this.PRLISvc.list()
           .subscribe(prlis => {

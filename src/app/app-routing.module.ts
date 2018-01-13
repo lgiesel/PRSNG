@@ -28,7 +28,8 @@ import { AboutComponent } from './core/about/about.component';
 
 //Order matters: most specific 1st, then general
 const routes: Routes = [
-	// { path: '', redirectTo: '/home', pathMatch: 'full;' }, 
+	// { path: '', redirectTo: '/home', pathMatch: 'full' }, 
+	{ path: '', redirectTo: '/user/login', pathMatch: 'full' }, 
 	{ path: 'user/detail/:id', component: UserDetailComponent }, 
 	{ path: 'user/edit/:id', component: UserEditComponent },
 	{ path: 'user/create', component: UserCreateComponent },
@@ -45,7 +46,7 @@ const routes: Routes = [
 	{ path: 'pr/detail/:id', component: PrDetailComponent }, 
 	{ path: 'pr/edit/:id', component: PrEditComponent },
 	{ path: 'pr/create', component: PrCreateComponent },
-	{ path: 'pr/reviewlist/:id', component: PrReviewlistComponent },
+	{ path: 'pr/reviewlist', component: PrReviewlistComponent },
 	{ path: 'pr/reviewdetail', component: PrReviewdetailComponent },
 	{ path: 'prli/list/:id', component: PrliListComponent },
 	{ path: 'prli/detail/:id', component: PrliDetailComponent }, 
@@ -54,9 +55,9 @@ const routes: Routes = [
 	{ path: 'user/login', component: UserLoginComponent },
 	{ path: 'home', component: HomeComponent },
 	{ path: 'about', component: AboutComponent },
-	{ path: '**', component: HomeComponent }
+	{ path: '**', component: UserLoginComponent }
+	// { path: '**', component: HomeComponent }
 ];
-//Point not logged in user to userlist rather than home
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

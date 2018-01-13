@@ -23,9 +23,10 @@ export class UserLoginComponent implements OnInit {
 					this.SysSvc.data.user.loggedIn = true;
 					console.log("SysSvc:", this.SysSvc.debug);
 					this.SysSvc.data.displayMenu = true;
-					this.router.navigateByUrl('/user/list');
-				    console.log("Authenticate:Users:", users);
-		console.log("Authenticate:User3:", this.SysSvc.data.user.instance.FirstName);
+					this.router.navigateByUrl('/home');
+				    // console.log("Authenticate:Users:", users);
+		      //       console.log("Authenticate:User3:", this.SysSvc.data.user.instance.FirstName,
+		      //       	                               this.SysSvc.data.user.instance.Id);
 
 				} else {
 					this.message = "Invalid Username/Password combination. Retry."

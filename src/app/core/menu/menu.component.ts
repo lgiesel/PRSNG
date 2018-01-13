@@ -14,12 +14,12 @@ export class MenuComponent implements OnInit {
     new Menu ('VENDOR', '/vendor/list', 'Vendor menu'),
     new Menu ('PRODUCT', '/product/list', 'Product menu'),
     new Menu ('PURCHASEREQUEST', '/pr/list', 'Purchase Request menu'),
-    new Menu ('REVIEW', '/pr/reviewlist/8', 'Review Purchase Requests menu'),
+    new Menu ('REVIEW', '/pr/reviewlist', 'Review Purchase Requests menu'),
     new Menu ('ABOUT', '/about', 'About menu'),
     new Menu ('LOGIN', '/user/login', 'Login menu')
   ];
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
   }

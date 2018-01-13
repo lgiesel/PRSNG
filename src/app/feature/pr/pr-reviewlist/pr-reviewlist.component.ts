@@ -6,6 +6,7 @@ import { UserService } from '@svc/user.service';
 import { User } from '@model/user';
 import { StatusService } from '@svc/status.service';
 import { Status } from '@model/status';
+import { SystemService } from '@svc/system.service';
 
 @Component({
   selector: 'app-pr-reviewlist',
@@ -14,7 +15,6 @@ import { Status } from '@model/status';
 })
 export class PrReviewlistComponent implements OnInit {
   title: string = 'Purchase Request Review List';
-  Id: string;
   selectedSortKey: string = 'Id';
   sortDesc: string = 'asc';
   sortKeys: string[] = PurchaseRequest.sortableKeys;
@@ -37,32 +37,31 @@ export class PrReviewlistComponent implements OnInit {
         this.StatusSvc.get(pr.StatusID)
          .subscribe(Status => {
              pr.StatusDesc = Status[0].Description;
-             console.log(pr);
            });
      }
   }
 
   constructor(private PRSvc: PrService,
               private UserSvc: UserService,
-              private StatusSvc : StatusService,
+              private StatusSvc: StatusService,
+              private SysSvc: SystemService,
               private router: Router,
-  	          private route: ActivatedRoute) { }
+  	          private route: ActivatedRoute) {  
+  }
 
   ngOnInit() {
-  	// this.PRSvc.list()
-  	// 	.subscribe(purchreqs => {
-	this.route.params.subscribe(parms => this.Id = parms ['id']); 
-    this.PRSvc.reviewlist(8)
-  		.subscribe(purchreqs => {
-  			this.purchreqs = purchreqs;
+
+    this.PRSvc.reviewlist(this.SysSvc.data.user.instance.Id)
+      .subscribe(purchreqs => {
+        this.purchreqs = purchreqs;
         this.UserSvc.list()
           .subscribe(users => this.users = users);
         this.addUserName(this.purchreqs);        
         this.StatusSvc.list()
           .subscribe(statuses => this.statuses = statuses);
         this.addStatusName(this.purchreqs);        
-   	    console.log(purchreqs);
-    });  	
+        console.log(purchreqs);
+    });    
   }
 
 }

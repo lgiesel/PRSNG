@@ -1,5 +1,53 @@
 <app-menu></app-menu> 
 
-<p>
-  pr-reviewlist works!
-</p>
+<div class='component-content'> 
+	<div class=''>
+
+		<div class='lefthalf'>
+			<span class='component-title'>{{title}}</span> 
+		</div>	
+
+		<div class='righthalf input-group'>
+			<span class=''>Sort:</span>
+			<select [(ngModel)]='selectedSortKey' class='custom-select text-sm-left'>
+				<option *ngFor='let sortKey of sortKeys' value='{{sortKey}}'>{{sortKey}}
+				</option>
+			</select>
+			<span>Order:</span>
+			<select [(ngModel)]='sortDesc' class='custom-select text-sm-left'>
+				<option value='asc'>Asc</option>
+				<option value='desc'>Desc</option>
+			</select>
+		</div>		
+
+	</div>
+	<p *ngIf='!purchreqs'>The data is loading...</p>
+
+	<table class='table table-sm' *ngIf='purchreqs'>
+
+		<tr>
+			<th>ID</th>
+			<th>User</th>
+			<th>Description</th>
+			<th>Justification</th>
+			<th>DateNeeded</th>
+			<th>DeliveryMode</th>
+			<th>StatusDesc</th>			
+			<th>Total</th>
+			<th>Action</th>					
+		</tr>
+
+		<tr *ngFor='let pr of purchreqs | sort:selectedSortKey:sortDesc'>
+			<td>{{pr.Id}}</td>	
+			<td>{{pr.UserName}}</td>		
+			<td>{{pr.Description}}</td>	
+			<td>{{pr.Justification}}</td>
+			<td>{{pr.DateNeeded}}</td>
+			<td>{{pr.DeliveryMode}}</td>
+			<td>{{pr.StatusDesc}}</td>				
+			<td>{{pr.Total | currency}}</td>
+		</tr>		
+
+	</table>
+
+</div>

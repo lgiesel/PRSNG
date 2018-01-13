@@ -34,7 +34,7 @@ export class PrService {
   } 
 
   reviewlist(id): Observable<PurchaseRequest[]> {
-    return this.http.get(url+"GetNot") as Observable<PurchaseRequest[]>;
+    return this.http.get(url+"GetNot?id="+id) as Observable<PurchaseRequest[]>;
   } 
 
   constructor(private http: HttpClient) { }

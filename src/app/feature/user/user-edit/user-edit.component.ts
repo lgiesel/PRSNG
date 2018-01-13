@@ -14,6 +14,7 @@ export class UserEditComponent implements OnInit {
   Id: string;
   resp: any;
   user: User;	  
+  
   change(){
     console.log(this.user);
   	this.UserSvc.update(this.user)

@@ -33,7 +33,6 @@ export class UserDetailComponent implements OnInit {
   ngOnInit() {
   	this.route.params.subscribe(parms => this.Id = parms ['id']); //Must match Id in router
     this.UserSvc.get(this.Id)
-      // .subscribe(users => this.user = users.length > 0 ? users[0] : null);
       .subscribe(usrs => {
         this.user = usrs.length > 0 ? usrs[0] : null;
         console.log(this.user);
