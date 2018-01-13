@@ -21,7 +21,7 @@ export class PrListComponent implements OnInit {
   purchreqs: PurchaseRequest[];
   users: User[];
   statuses: Status[];
- 
+
   compareFn (v1:number, v2: number): boolean {
     return v1 == v2;
   }
@@ -46,6 +46,17 @@ export class PrListComponent implements OnInit {
      }
   }
 
+  getReviewPRsOnly (prs: PurchaseRequest[]): PurchaseRequest[] {
+    let reviewPRs: PurchaseRequest[] = [];
+    for (let pr of prs) {
+      if (pr.StatusID == this.reviewStatusID){
+        reviewPRs.push(pr);
+        console.log('Review PR='+pr);
+      }
+    }
+    return reviewPRs;
+  }
+
   constructor(private PRSvc: PrService,
               private UserSvc: UserService,
               private StatusSvc : StatusService,
@@ -54,14 +65,15 @@ export class PrListComponent implements OnInit {
   ngOnInit() {
   	this.PRSvc.list()
   		.subscribe(purchreqs => {
-  			this.purchreqs = purchreqs;
+        this.purchreqs = purchreqs;
         this.UserSvc.list()
-          .subscribe(users => this.users = users);
+            .subscribe(users => this.users = users);
         this.addUserName(this.purchreqs);        
         this.StatusSvc.list()
           .subscribe(statuses => this.statuses = statuses);
         this.addStatusName(this.purchreqs);        
-   	    console.log(purchreqs);
+        console.log(purchreqs);
+
     });  	
     console.log ('Admin1=' + this.SysSvc.data.user.instance.IsAdmin);  
   }

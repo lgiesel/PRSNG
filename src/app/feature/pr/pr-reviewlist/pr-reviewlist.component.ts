@@ -7,6 +7,7 @@ import { User } from '@model/user';
 import { StatusService } from '@svc/status.service';
 import { Status } from '@model/status';
 import { SystemService } from '@svc/system.service';
+import { GlobalConstants } from '@model/global';
 
 @Component({
   selector: 'app-pr-reviewlist',
@@ -14,6 +15,8 @@ import { SystemService } from '@svc/system.service';
   styleUrls: ['./pr-reviewlist.component.css']
 })
 export class PrReviewlistComponent implements OnInit {
+  private reviewStatusID = +GlobalConstants.REVIEW_STATUS_ID;
+
   title: string = 'Purchase Request Review List';
   selectedSortKey: string = 'Id';
   sortDesc: string = 'asc';
@@ -41,6 +44,17 @@ export class PrReviewlistComponent implements OnInit {
      }
   }
 
+  getReviewPRsOnly (prs: PurchaseRequest[]): PurchaseRequest[] {
+    let reviewPRs: PurchaseRequest[] = [];
+    for (let pr of prs) {
+      if (pr.StatusID == this.reviewStatusID){
+        reviewPRs.push(pr);
+        console.log('Review PR='+pr);
+      }
+    }
+    return reviewPRs;
+  }  
+
   constructor(private PRSvc: PrService,
               private UserSvc: UserService,
               private StatusSvc: StatusService,
@@ -53,7 +67,7 @@ export class PrReviewlistComponent implements OnInit {
 
     this.PRSvc.reviewlist(this.SysSvc.data.user.instance.Id)
       .subscribe(purchreqs => {
-        this.purchreqs = purchreqs;
+        this.purchreqs = this.getReviewPRsOnly(purchreqs);
         this.UserSvc.list()
           .subscribe(users => this.users = users);
         this.addUserName(this.purchreqs);        
