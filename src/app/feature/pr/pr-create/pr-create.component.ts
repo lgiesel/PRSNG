@@ -19,12 +19,7 @@ export class PrCreateComponent implements OnInit {
   user: User = new User();
 
   create(){
-    // this.pr.DateNeeded += 'T00:00:00.000Z';
-    // this.pr.DateNeeded = new Date(this.pr.DateNeeded).toISOString;
-    // COULD DO BELOW TO LET USER ENTER DATE IN D/M/YY FORMAT OR YYYY-MM-DD
-    //   let dt = "1/8/2018"
-    //   let dbdt = new Date (df).toISOString'
-    //  
+    this.pr.UserID = this.SysSvc.data.user.instance.Id;
     console.log(this.pr);
   	this.PRSvc.create(this.pr)
   		.subscribe(resp => {
@@ -39,7 +34,7 @@ export class PrCreateComponent implements OnInit {
               private SysSvc: SystemService,
 	            private router: Router) { 
     
-    this.pr.StatusID = 1;
+    // this.pr.StatusID = 1;
   }
 
   ngOnInit() {
