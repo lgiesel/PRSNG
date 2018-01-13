@@ -10,6 +10,7 @@ import { UserService } from '@svc/user.service';
 import { User } from '@model/user';
 import { StatusService } from '@svc/status.service';
 import { Status } from '@model/status';
+import { SystemService } from '@svc/system.service';
 
 @Component({
   selector: 'app-prli-list',
@@ -74,6 +75,7 @@ export class PrliListComponent implements OnInit {
               private ProductSvc: ProductService,  
               private UserSvc: UserService,            
               private StatusSvc: StatusService,
+              private SysSvc: SystemService,
               private router: Router,
               private route: ActivatedRoute) { }
 
@@ -96,6 +98,7 @@ export class PrliListComponent implements OnInit {
         });
         this.addStatusDesc(this.pr);                  
     });
+    console.log ('Admin1=' + this.SysSvc.data.user.instance.IsAdmin);  
   }
  }
 

@@ -21,13 +21,12 @@ export class UserListComponent implements OnInit {
               private SysSvc: SystemService) { }
 
   ngOnInit() {
-    console.log("UserIDy1: " + this.SysSvc.data.user.instance.Id);        
   	this.UserSvc.list()
   		.subscribe(users => {
         this.users = users;
-        console.log ('Admin=' + this.SysSvc.data.user.instance.IsAdmin);
+        console.log ('Admin1=' + this.SysSvc.data.user.instance.IsAdmin);
   	    console.log(users);
     });
-    console.log("UserIDy2: " + this.SysSvc.data.user.instance.Id);        
+    console.log("Admin2=" + this.SysSvc.data.user.instance.IsAdmin);        
   }
 }  

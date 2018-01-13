@@ -33,9 +33,7 @@ export class PrCreateComponent implements OnInit {
               private UserSvc: UserService,
               private SysSvc: SystemService,
 	            private router: Router) { 
-    
-    // this.pr.StatusID = 1;
-  }
+   }
 
   ngOnInit() {
 

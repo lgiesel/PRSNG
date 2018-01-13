@@ -5,6 +5,7 @@ import { UserService } from '@svc/user.service';
 import { User } from '@model/user';
 import { StatusService } from '@svc/status.service';
 import { Status } from '@model/status';
+import { SystemService } from '@svc/system.service';
 
 @Component({
   selector: 'app-pr-list',
@@ -47,7 +48,8 @@ export class PrListComponent implements OnInit {
 
   constructor(private PRSvc: PrService,
               private UserSvc: UserService,
-              private StatusSvc : StatusService) { }
+              private StatusSvc : StatusService,
+              private SysSvc: SystemService) { }
 
   ngOnInit() {
   	this.PRSvc.list()
@@ -61,6 +63,7 @@ export class PrListComponent implements OnInit {
         this.addStatusName(this.purchreqs);        
    	    console.log(purchreqs);
     });  	
+    console.log ('Admin1=' + this.SysSvc.data.user.instance.IsAdmin);  
   }
 
 }

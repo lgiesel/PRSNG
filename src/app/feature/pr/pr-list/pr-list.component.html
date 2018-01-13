@@ -4,7 +4,7 @@
 	<div class=''>
 		<div class='lefthalf'>
 			<span class='component-title'>{{title}}</span> 
-			 <span><a routerLink='/pr/create'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'></a></span>
+			 <span><a routerLink='/pr/create' *ngIf='SysSvc.data.user.instance.IsAdmin'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'></a></span>
 		</div>	
 
 		<div class='righthalf input-group'>
