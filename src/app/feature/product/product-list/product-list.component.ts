@@ -3,6 +3,7 @@ import { ProductService } from '@svc/product.service';
 import { Product } from '@model/product';
 import { VendorService } from '@svc/vendor.service';
 import { Vendor } from '@model/vendor';
+import { SystemService } from '@svc/system.service';
 
 @Component({
   selector: 'app-product-list',
@@ -19,7 +20,8 @@ export class ProductListComponent implements OnInit {
   vendor: Vendor[];
 
   constructor(private ProductSvc: ProductService,
-              private VendorSvc : VendorService) { }
+              private VendorSvc : VendorService,
+              private SysSvc: SystemService) { }
 
   addVendorName(prods: Product[]) {
      for(let prod of prods) {

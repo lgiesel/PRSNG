@@ -3,7 +3,7 @@
 <div class='component-content'>
 	<span class='component-title'>{{title}}</span> 
 	 <span>
-	 	<a routerLink='/prli/create/{{pr.Id}}' *ngIf='SysSvc.data.user.instance.IsAdmin'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'>
+	 	<a routerLink='/prli/create/{{pr.Id}}' *ngIf='pr.UserID == SysSvc.data.user.instance.Id'><img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'>
 			| <span><a routerLink='/pr/list'>Back to list</a></span>
 	 	</a>
 	 </span>
@@ -59,8 +59,8 @@
 			<td>{{prli.LineItemTotal | currency}}</td>
 
 			<td class='actions'>
-				<a routerLink='/prli/detail/{{prli.Id}}'><img src='assets/detail.png' title='Detail'></a>
-				<a routerLink='/prli/edit/{{prli.Id}}'>
+				<a routerLink='/prli/detail/{{prli.Id}}'><img src='assets/detail.png' title='Detail' *ngIf='pr.UserID == SysSvc.data.user.instance.Id'></a>
+				<a routerLink='/prli/edit/{{prli.Id}}' *ngIf='pr.UserID == SysSvc.data.user.instance.Id'>
 					<img src='assets/edit.png' title='Edit'>
 				</a>
 			</td>

@@ -10,11 +10,12 @@ import { SystemService } from '@svc/system.service';
 export class MenuComponent implements OnInit {
 
   hideReviewMenuItem: boolean = !this.SysSvc.data.user.instance.IsReviewer;
+  hideAdminMenuItem: boolean = !this.SysSvc.data.user.instance.IsAdmin;
 
   menuitems: Menu[] = [
     new Menu ('HOME', '/home', 'Home menu'),
     new Menu ('USER', '/user/list', 'User menu'),
-    new Menu ('VENDOR', '/vendor/list', 'Vendor menu'),
+    new Menu ('VENDOR', '/vendor/list', 'Vendor menu', this.hideAdminMenuItem),
     new Menu ('PRODUCT', '/product/list', 'Product menu'),
     new Menu ('PURCHASEREQUEST', '/pr/list', 'Purchase Request menu'),
     new Menu ('REVIEW', '/pr/reviewlist', 'Review Purchase Requests menu', this.hideReviewMenuItem),
