@@ -98,7 +98,6 @@ export class PrliListComponent implements OnInit {
         });
         this.addStatusDesc(this.pr);                  
     });
-    console.log ('Admin1=' + this.SysSvc.data.user.instance.IsAdmin);  
   }
  }
 
