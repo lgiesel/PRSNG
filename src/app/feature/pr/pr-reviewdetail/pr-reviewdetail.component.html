@@ -11,7 +11,7 @@
 		<a routerLink='' class='btn btn-danger' title='Reject'>Reject</a>				
 		<span>     </span>
 
-		<span class=''>Sort:</span>
+<!-- 		<span class=''>Sort:</span>
 		<select [(ngModel)]='selectedSortKey' class='custom-select text-sm-left'>
 			<option *ngFor='let sortKey of sortKeys' value='{{sortKey}}'>{{sortKey}}
 			</option>
@@ -20,10 +20,10 @@
 		<select [(ngModel)]='sortDesc' class='custom-select text-sm-left'>
 			<option value='asc'>Asc</option>
 			<option value='desc'>Desc</option>
-		</select>
+		</select> -->
 	</div>
 
-	<p *ngIf='!pr'>The data is loading...</p>
+	<p *ngIf='undefined'>The data is loading...</p>
 
 	<table class='table table-sm' *ngIf='pr'>
 
@@ -50,6 +50,27 @@
  --><!-- 				<button (click)="remove(prli.Id)" class='btn btn-danger' title='Delete'>Remove</button> -->
 			</td>
 		</tr>
+	</table>
+</div>
+
+<div>
+	<table class='table table-sm'>
+
+		<tr>
+			<th>Product Name</th>
+			<th>Product Price</th>
+			<th>Quantity</th>				
+			<th>Line Item Total</th>				
+		</tr>
+
+		<tr *ngFor='let prli of prlis'>
+			<td>{{prli.ProductName}}</td>	
+			<td>{{prli.ProductPrice | currency}}</td>	
+			<td>{{prli.Quantity}}</td>
+			<td>{{prli.LineItemTotal | currency}}</td>
+
+		</tr>
+
 	</table>
 
 </div>
