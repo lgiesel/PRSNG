@@ -15,7 +15,7 @@ import { GlobalConstants } from '@model/global';
   styleUrls: ['./pr-reviewlist.component.css']
 })
 export class PrReviewlistComponent implements OnInit {
-  private reviewStatusID = +GlobalConstants.REVIEW_STATUS_ID;
+  private reviewStatusID = +GlobalConstants.REVIEW_STATUS_ID; //Convert string to nbr w + sign
 
   title: string = 'Purchase Request Review List';
   selectedSortKey: string = 'Id';

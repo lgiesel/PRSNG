@@ -46,17 +46,6 @@ export class PrListComponent implements OnInit {
      }
   }
 
-  getReviewPRsOnly (prs: PurchaseRequest[]): PurchaseRequest[] {
-    let reviewPRs: PurchaseRequest[] = [];
-    for (let pr of prs) {
-      if (pr.StatusID == this.reviewStatusID){
-        reviewPRs.push(pr);
-        console.log('Review PR='+pr);
-      }
-    }
-    return reviewPRs;
-  }
-
   constructor(private PRSvc: PrService,
               private UserSvc: UserService,
               private StatusSvc : StatusService,
