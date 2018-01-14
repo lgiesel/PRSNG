@@ -46,6 +46,12 @@
 			<td>{{pr.DeliveryMode}}</td>
 			<td>{{pr.StatusDesc}}</td>				
 			<td>{{pr.Total | currency}}</td>
+
+			<td class='actions'>
+				<a routerLink='/pr/reviewdetail/{{pr.Id}}'><img src='assets/detail.png' title='Detail'></a>
+<!-- 				<a routerLink='/prli/list/{{pr.Id}}'><img src='assets/lines.png' title='View'></a>		 -->
+			</td>
+
 		</tr>		
 
 	</table>

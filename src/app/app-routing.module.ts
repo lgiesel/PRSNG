@@ -47,7 +47,7 @@ const routes: Routes = [
 	{ path: 'pr/edit/:id', component: PrEditComponent },
 	{ path: 'pr/create', component: PrCreateComponent },
 	{ path: 'pr/reviewlist', component: PrReviewlistComponent },
-	{ path: 'pr/reviewdetail', component: PrReviewdetailComponent },
+	{ path: 'pr/reviewdetail/:id', component: PrReviewdetailComponent },
 	{ path: 'prli/list/:id', component: PrliListComponent },
 	{ path: 'prli/detail/:id', component: PrliDetailComponent }, 
 	{ path: 'prli/edit/:id', component: PrliEditComponent },
