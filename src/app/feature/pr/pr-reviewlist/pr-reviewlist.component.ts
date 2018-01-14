@@ -18,7 +18,7 @@ export class PrReviewlistComponent implements OnInit {
   private reviewStatusID = +GlobalConstants.REVIEW_STATUS_ID; //Convert string to nbr w + sign
 
   title: string = 'Purchase Request Review List';
-  selectedSortKey: string = 'Id';
+  selectedSortKey: string = 'Id'; //SET DEFAULTS IN ALL PLACES W SORT
   sortDesc: string = 'asc';
   sortKeys: string[] = PurchaseRequest.sortableKeys;
   purchreqs: PurchaseRequest[];

@@ -26,7 +26,8 @@ export class PrService {
   } 
 
   remove(id): Observable<any> {
-  	return this.http.get(url+"Delete?id="+id) as Observable<any>;
+  	return this.http.get(url+"Delete?id="+id) as Observable<PurchaseRequest[]>;
+    // Observable<any>;
   } 
 
   submit(pr: PurchaseRequest): Observable<any> {
@@ -35,6 +36,14 @@ export class PrService {
 
   reviewlist(id): Observable<PurchaseRequest[]> {
     return this.http.get(url+"GetNot?id="+id) as Observable<PurchaseRequest[]>;
+  } 
+
+  approve(pr: PurchaseRequest): Observable<any> {
+    return this.http.post(url+"Approve", pr) as Observable<any>;
+  } 
+
+  reject(pr: PurchaseRequest): Observable<any> {
+    return this.http.post(url+"Reject", pr) as Observable<any>;
   } 
 
   constructor(private http: HttpClient) { }

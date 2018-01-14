@@ -6,21 +6,10 @@
 		<span><a routerLink='/pr/reviewlist'>Back to list</a></span>
 	</div>		
 	<div class='righthalf input-group'>
-<!-- 		<span class=''>Approve PR:</span> -->
-		<a routerLink='' class='btn btn-success' title='Approve'>Approve</a>		
-		<a routerLink='' class='btn btn-danger' title='Reject'>Reject</a>				
-		<span>     </span>
 
-<!-- 		<span class=''>Sort:</span>
-		<select [(ngModel)]='selectedSortKey' class='custom-select text-sm-left'>
-			<option *ngFor='let sortKey of sortKeys' value='{{sortKey}}'>{{sortKey}}
-			</option>
-		</select>
-		<span>Order:</span>
-		<select [(ngModel)]='sortDesc' class='custom-select text-sm-left'>
-			<option value='asc'>Asc</option>
-			<option value='desc'>Desc</option>
-		</select> -->
+		<button (click)="approve()" class='btn btn-success' title='ApprovePR'>Approve Request</button>
+		<button (click)="reject()" class='btn btn-danger' title='RejectPR'>Reject Request</button>		
+
 	</div>
 
 	<p *ngIf='undefined'>The data is loading...</p>
@@ -45,9 +34,7 @@
 		</tr>			    	
 		<tr>
 			<td colspan="2">
-<!-- 				<a routerLink='' class='btn btn-success' title='Approve'>Approve</a> -->
-<!-- 				<a routerLink='' class='btn btn-danger' title='Reject'>Reject</a>				
- --><!-- 				<button (click)="remove(prli.Id)" class='btn btn-danger' title='Delete'>Remove</button> -->
+
 			</td>
 		</tr>
 	</table>

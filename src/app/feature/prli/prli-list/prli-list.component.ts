@@ -70,6 +70,16 @@ export class PrliListComponent implements OnInit {
      });
    }   
 
+  submit(){
+    console.log(this.pr);
+    this.PrSvc.submit(this.pr)
+      .subscribe(resp => {
+        this.resp = resp;
+        console.log("PurchaseReq-Submit:", this.resp);
+        this.router.navigate(['/pr/list']);
+      });
+  }
+
   constructor(private PRLISvc: PrliService,
               private PrSvc: PrService,
               private ProductSvc: ProductService,  

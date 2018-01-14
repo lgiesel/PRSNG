@@ -29,12 +29,13 @@
 		<td>{{pr.StatusDesc}}</td>		
 		<td>{{pr.DateNeeded}}</td>
 	    <td>{{pr.Total | currency}}</td>	
-<!-- 		<tr><td colspan="2">
-				<button (click)="change(pr.Id)" class='btn btn-danger' title='Delete'>Remove</button>
-			<button type="button" class="btn btn-success">Submit Purchase Request</button>	
-		</td></tr>			    	 -->
+
 	</tr>		
 </table>
+</div>
+
+<div>
+	<button (click)="submit()" class='btn btn-success' title='SubmitPR'>Submit Request</button>			
 </div>
 
 <div *ngIf='prlis'>

@@ -12,21 +12,19 @@
 
 	<table> 
 		<tr><th>ID:</th><td>{{pr.Id}}</td></tr>
-		<!-- <tr><th>UserID:</th><td>{{pr.UserID}}</td></tr> -->
 		<tr><th>UserName:</th><td>{{pr.UserName}}</td></tr>
 		<tr><th>Description:</th><td>{{pr.Description}}</td></tr>
 		<tr><th>Justification:</th><td>{{pr.Justification}}</td></tr>
 		<tr><th>DateNeeded:</th><td>{{pr.DateNeeded}}</td></tr>
 		<tr><th>DeliveryMode:</th><td>{{pr.DeliveryMode}}</td></tr>
-		<!-- <tr><th>StatusID:</th><td>{{pr.StatusID}}</td></tr> -->
 		<tr><th>StatusDesc:</th><td>{{pr.StatusDesc}}</td></tr>
 		<tr><th>Total:</th><td>{{pr.Total | currency}}</td></tr>
-		<!-- <tr><th>SubmittedDate:</th><td>{{pr.SubmittedDate}}</td></tr>	 -->
 
 		<tr><td colspan="2">
 			<a routerLink='/pr/edit/{{pr.Id}}' class='btn btn-primary' title='Edit'>Edit</a>
 			<button (click)="remove(pr.Id)" class='btn btn-danger' title='Delete'>Remove</button>
-			<button (click)="submit(pr.Id)" class='btn btn-success' title='SubmitPR'>Submit Purchase Request</button>
+			<button (click)="submit()" class='btn btn-success' title='SubmitPR'>Submit Purchase Request</button>			
+<!-- 			<button (click)="submit(pr.Id)" class='btn btn-success' title='SubmitPR'>Submit Purchase Request</button> -->
 		</td></tr>
 	</table>
 </div>

@@ -68,6 +68,26 @@ export class PrReviewdetailComponent implements OnInit {
      }
   }  
 
+  approve(){
+    console.log(this.pr);
+    this.PrSvc.approve(this.pr)
+      .subscribe(resp => {
+        this.resp = resp;
+        console.log("PurchaseReq-Approve:", this.resp);
+        this.router.navigate(['/pr/reviewlist']);
+      });
+  }
+
+  reject(){
+    console.log(this.pr);
+    this.PrSvc.reject(this.pr)
+      .subscribe(resp => {
+        this.resp = resp;
+        console.log("PurchaseReq-Reject:", this.resp);
+        this.router.navigate(['/pr/reviewlist']);
+      });
+  }
+
   constructor(private PrSvc: PrService,
 			  private UserSvc: UserService,   	
               private StatusSvc: StatusService,
