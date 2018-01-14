@@ -24,3 +24,17 @@ a {
 a:hover { /* pseudo tag */
 	background-color: black; /* Changes About menu backgrouind */
 }
+
+div {
+	color: white;	
+	text-align: right;
+	font-size: 10pt;
+}
+
+.logged-in-user {
+	color: white;	
+	text-align: right;
+	text-transform: uppercase;
+	width: 725px;
+	font-size: 13pt
+}	
