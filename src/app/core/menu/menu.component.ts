@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
     new Menu ('USER', '/user/list', 'User menu'),
     new Menu ('VENDOR', '/vendor/list', 'Vendor menu', this.hideAdminMenuItem),
     new Menu ('PRODUCT', '/product/list', 'Product menu'),
-    new Menu ('PURCHASEREQUEST', '/pr/list', 'Purchase Request menu'),
+    new Menu ('REQUEST', '/pr/list', 'Purchase Request menu'),
     new Menu ('REVIEW', '/pr/reviewlist', 'Review Purchase Requests menu', this.hideReviewMenuItem),
     new Menu ('ABOUT', '/about', 'About menu'),
     new Menu ('LOGIN', '/user/login', 'Login menu')

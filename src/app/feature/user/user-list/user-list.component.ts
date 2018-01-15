@@ -11,7 +11,7 @@ import { SystemService } from '@svc/system.service';
 export class UserListComponent implements OnInit {
 
   title: string = 'User List';
-  selectedSortKey: string = 'Id'; 
+  selectedSortKey: string = 'LastName'; 
   sortDesc: string = 'asc';
   sortKeys: string[] = User.sortableKeys;
   isAdmin: boolean = false;

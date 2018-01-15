@@ -9,7 +9,7 @@ export class Product {
    PhotoPath   :  string;
 
    static sortableKeys =
-       ['Name','PartNumber','Price', 'Id'];
+       ['Name','VendorName','PartNumber','Price'];
 
    constructor (
        ID          :  number = 0,

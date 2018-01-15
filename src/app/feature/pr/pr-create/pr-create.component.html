@@ -13,17 +13,23 @@
     <small id='emailHelp' class="form-text text-muted col-sm-2">The Description</small>
   </div>	
 
-  <div class="form-group row">
+  <div class="form-group row"> 
     <label class='col-form-label col-sm-2' for="prjustification">Justification:</label>
     <input [(ngModel)]='pr.Justification' name='Justification' type='text' class='form-control col-sm-6' id='prjustification' aria-describedby='emailHelp' placeholder='Justification'>
     <small id='emailHelp' class="form-text text-muted col-sm-2">The Justification</small>
   </div>  
 
-  <div class="form-group row">
+<!--   <div class="form-group row">
     <label class='col-form-label col-sm-2' for="prdateneeded">Date Needed:</label>
     <input [(ngModel)]='pr.DateNeeded' name='Date Needed' type='text' class='form-control col-sm-6' id='prdateneeded' aria-describedby='emailHelp' placeholder='DateNeeded'>
     <small id='emailHelp' class="form-text text-muted col-sm-2">Date Needed ('YYYY-MM-DD')</small>
-  </div>
+  </div> -->
+
+  <div class = "form-group row">
+       <form action = "/action_page.php" class = 'col-form-label col-sm-2' for="purchaserequestdateneeded">Date Needed: </form>
+       <input [(ngModel)]="pr.DateNeeded" name="dateneeded" type="date" data-date-format="YYYY-MM-DD" class = "form-control col-sm-6" id="purchaserequestdateneeded" aria-describedby="dateneededHelp" placeholder="Date Needed">
+       <small id = "dateneededHelp" class ="form-text text-muted col-sm-2"> Date Needed</small>
+   </div>
 
   <div class="form-group row">
     <label class='col-form-label col-sm-2' for="prdeliverymode">Delivery Mode:</label>

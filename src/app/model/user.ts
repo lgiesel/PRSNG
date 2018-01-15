@@ -12,7 +12,7 @@ export class User {
 
    static sortableKeys =
        ['LastName','FirstName','UserName',
-        'Admin','Reviewer','Active', 'Id'];
+        'Admin','Reviewer','Active'];
 
    constructor (
        Id         : number  = 0,

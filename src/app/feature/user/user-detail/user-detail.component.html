@@ -19,9 +19,9 @@
 		<tr><th>Password:</th><td>********</td></tr>
 		<tr><th>Phone:</th><td>{{user.Phone}}</td></tr>
 		<tr><th>Email:</th><td>{{user.Email}}</td></tr>
-		<tr><th>Admin:</th><td>{{user.Admin ? 'Yes':'No'}}</td></tr>
-		<tr><th>Reviewer:</th><td>{{user.Reviewer ? 'Yes':'No'}}</td></tr>
-		<tr><th>Active:</th><td>{{user.Active ? 'Yes':'No'}}</td></tr>			
+		<tr><th>Admin:</th><td>{{user.IsAdmin ? 'Yes':'No'}}</td></tr>
+		<tr><th>Reviewer:</th><td>{{user.IsReviewer ? 'Yes':'No'}}</td></tr>
+		<tr><th>Active:</th><td>{{user.IsActive ? 'Yes':'No'}}</td></tr>			
 		<tr>
 			<td colspan="2">
 				<a routerLink='/user/edit/{{user.Id}}' class='btn btn-primary' title='Edit'>Edit</a>
@@ -31,16 +31,3 @@
 	</table>
 </div>	
 	<!-- Need common area to display all errors,; like footer, banner -->		
-
-<!-- EDIT BTN AT END
-			<a routerLink='/user/edit/{{user.Id}}' class='btn btn-primary' title='Edit' 	*ngIf='SysSvc.data.user.instance.Admin'>Edit
-			</a>
- -->
-
-
-<!--  		TOP LINE PLUS SIGN
-			<a routerLink='/user/create' *ngIf='SysSvc.data.user.instance.Admin'>
-		 		<img id='createnew' width='20' height='20' src='assets/add-new.png' title='Add New'>
-				| <span><a routerLink='/user/list'>Back to list</a></span>
-		 	</a>
- -->

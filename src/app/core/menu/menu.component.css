@@ -35,6 +35,7 @@ div {
 	color: white;	
 	text-align: right;
 	text-transform: uppercase;
-	width: 725px;
-	font-size: 13pt
+	/*width: 500px;*/
+	font-size: 12pt;
+	float: right;
 }	

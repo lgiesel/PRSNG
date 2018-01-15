@@ -13,7 +13,7 @@ import { SystemService } from '@svc/system.service';
 export class ProductListComponent implements OnInit {
 
   title: string = 'Product List';
-  selectedSortKey: string = 'Id'; //default sort - can chg to another value
+  selectedSortKey: string = 'Name'; //default sort - can chg to another value
   sortDesc: string = 'asc';
   sortKeys: string[] = Product.sortableKeys;
   products: Product[];

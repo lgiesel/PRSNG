@@ -1,12 +1,19 @@
+<div>
+
+</div>	
+
 <div class='component-content'>
 	<form class='text-center'>
-		<table *ngIf='user' class='table-sm' style='margin:50px auto;padding: 5px 20px;border:1px solid silver;width:400px;'>
-			<tr class='text-center'>
-				<td colspan="2">Login</td>
+		<table *ngIf='user' class='table-sm' style='margin:100px auto;padding:50px 50px;border:1px solid silver;width:500px;'>
+			<tr class='text-center' style='font-size: 1.5em; font-weight: bold;'>
+				<td colspan="4">Welcome to the Purchase Request System!</td>
+			</tr>
+			<tr>
+				<td colspan="2" style='font-weight: bold;'>Please login.</td>
 			</tr>
 			<tr>
 				<td>Username:</td>
-				<td><input [(ngModel)]='user.UserName' name='Username' type='text'></td>
+				<td><input [(ngModel)]='user.UserName' name='Username' type='text' autofocus></td>
 			</tr>
 			<tr>
 				<td>Password:</td>

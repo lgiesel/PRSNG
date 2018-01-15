@@ -39,21 +39,18 @@
 		<!-- <p *ngIf='!users'>The data is loading...</p> -->
 		<table class='table table-sm' *ngIf='users'>
 			<tr>
-				<th>ID</th>
+				<!-- <th>ID</th> -->
 				<th>Name</th>
 				<th>Username</th>
-				<!-- <th>Password</th> -->
 				<th>Phone</th>
 				<th>Email</th>
 				<th>Priv</th>
-				<!-- <th>Active</th> -->
 				<th>Action</th>
 			</tr>
 			<tr *ngFor='let user of users | sort:selectedSortKey:sortDesc'>
-				<td>{{user.Id}}</td>
+				<!-- <td>{{user.Id}}</td> -->
 				<td>{{user.FirstName}} {{user.LastName}}</td>
 				<td>{{user.Username}}</td>
-				<!-- <td>{{user.Password}}</td> -->
 				<td>{{user.Phone}}</td>
 				<td>{{user.Email}}</td>
 				<td>
@@ -62,13 +59,8 @@
 				<td class='actions'>
 					<a routerLink='/user/detail/{{user.Id}}'><img src='assets/detail.png' title='Detail'></a>
 					<a routerLink='/user/edit/{{user.Id}}' *ngIf=
-'SysSvc.data.user.instance.IsAdmin && user.Id != SysSvc.data.user.instance.Id || 
- user.Id == SysSvc.data.user.instance.Id'
-><img src='assets/edit.png' title='Edit'>
+                       'SysSvc.data.user.instance.IsAdmin && user.Id != SysSvc.data.user.instance.Id || user.Id == SysSvc.data.user.instance.Id'><img src='assets/edit.png' title='Edit'>
 					</a>
-
-<!-- 					<a routerLink='/user/edit/{{user.Id}}' *ngIf='SysSvc.data.user.instance.IsAdmin || user.Id == SysSvc.data.user.instance.Id'><img src='assets/edit.png' title='Edit'>
-					</a> -->
 				</td>
 			</tr>
 		</table>

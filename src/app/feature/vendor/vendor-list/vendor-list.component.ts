@@ -10,7 +10,7 @@ import { Vendor } from '@model/vendor';
 export class VendorListComponent implements OnInit {
 
   title: string = 'Vendor List';
-  selectedSortKey: string = 'Id'; //default sort - can chg to another value
+  selectedSortKey: string = 'Name'; //default sort - can chg to another value
   sortDesc: string = 'asc';
   sortKeys: string[] = Vendor.sortableKeys;
   vendors: Vendor[];
