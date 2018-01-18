@@ -11,6 +11,7 @@ export class MenuComponent implements OnInit {
 
   hideReviewMenuItem: boolean = !this.SysSvc.data.user.instance.IsReviewer;
   hideAdminMenuItem: boolean = !this.SysSvc.data.user.instance.IsAdmin;
+  displayName: string = this.SysSvc.data.user.instance.FirstName
 
   menuitems: Menu[] = [
     new Menu ('HOME', '/home', 'Home menu'),
@@ -20,7 +21,7 @@ export class MenuComponent implements OnInit {
     new Menu ('REQUEST', '/pr/list', 'Purchase Request menu'),
     new Menu ('REVIEW', '/pr/reviewlist', 'Review Purchase Requests menu', this.hideReviewMenuItem),
     new Menu ('ABOUT', '/about', 'About menu'),
-    new Menu ('LOGIN', '/user/login', 'Login menu')
+    new Menu ('LOGOUT', '/user/login', 'Login menu')
   ];
 
   constructor(private SysSvc: SystemService) {}

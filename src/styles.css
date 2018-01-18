@@ -1,7 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
 .component-title {
 	font-size: 1.5em;
 	font-weight: bold;
+	/*background-color: rgb(240,228, 207);*/
 }
 
 #createnew {
@@ -10,6 +12,7 @@
 .lefthalf {
 	display: inline-block;
 	width: 49%;
+	/*background-color: rgb(240,228, 207);	*/
 }
 
 .righthalf {
@@ -17,4 +20,5 @@
 	width: 49%;
 	text-align: right;
 	float: right;
+	/*background-color: rgb(240,228, 207);*/
 }

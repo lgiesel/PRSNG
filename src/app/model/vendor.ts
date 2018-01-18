@@ -11,7 +11,7 @@ export class Vendor {
    PreApproved :  boolean;
 
    static sortableKeys =
-       ['Name','City','State', 'PreApproved', 'Code', 'Id'];
+       ['Name','City','State', 'PreApproved', 'Code'];
 
    constructor (
        Id          :  number =0,

@@ -21,7 +21,7 @@ export class PrReviewdetailComponent implements OnInit {
   title: string = 'Purchase Request Review Details';
   Id: string;
   resp: any;
-  selectedSortKey: string = 'Id';
+  selectedSortKey: string = 'DateNeeded';
   sortDesc: string = 'asc';
   sortKeys: string[] = PurchaseRequestLineItem.sortableKeys;
   pr: PurchaseRequest;

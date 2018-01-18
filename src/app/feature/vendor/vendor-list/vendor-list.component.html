@@ -23,7 +23,7 @@
 	<p *ngIf='!vendors'>The data is loading...</p> 
 	<table class='table table-sm' *ngIf='vendors'>
 		<tr>
-			<th>ID</th>
+			<!-- <th>ID</th> -->
 			<th>Code</th>
 			<th>Name</th>
 			<th>Address</th>
@@ -36,7 +36,7 @@
 			<th>Action</th>			
 		</tr>
 		<tr *ngFor='let vendor of vendors | sort:selectedSortKey:sortDesc'>
-			<td>{{vendor.Id}}</td>
+			<!-- <td>{{vendor.Id}}</td> -->
 			<td>{{vendor.Code}}</td>
 			<td>{{vendor.Name}}</td>
 			<td>{{vendor.Address}}</td>

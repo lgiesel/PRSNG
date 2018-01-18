@@ -4,7 +4,6 @@
 		<li *ngFor='let menu of menuitems' [hidden]='menu.hidden' title='{{menu.tooltip}}'>  
 			<a routerLink='{{menu.href}}'>{{menu.display}}</a>  
 		</li>
-
-		<li class='logged-in-user' style='float: right;'> Welcome {{SysSvc.data.user.instance.FirstName}}</li>
+		<li class='logged-in-user' style='float: center;'> Welcome {{SysSvc.data.user.instance.FirstName}}</li>
 	</ul>		
 </nav>
